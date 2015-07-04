@@ -4,19 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>OC中的正则表达式初体验 | 求知若渴 大智若愚</title>
+    <title>求知若渴 大智若愚</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Alexcai">
     
-    <meta name="description" content="date: 2015-07-04 14:55:37
-tags:
+    <meta name="description" content="title: OC中的正则表达式初体验前言:
 正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
 正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
 本文初步记录了自己在使用过程中的一点体会.
 记录点滴,供以后查阅之用.
 
-从">
+从一个验证邮箱是否合">
     
     
     
@@ -277,15 +276,15 @@ tags:
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/04/OC中的正则表达式初体验/" title="OC中的正则表达式初体验" itemprop="url">OC中的正则表达式初体验</a>
+      <a href="/2015/07/04/OC中的正则表达式初体验/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="Alexcai">Alexcai</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-07-04T08:24:38.000Z" itemprop="datePublished">2015-07-04</time>
-    更新日期:<time datetime="2015-07-04T08:24:38.000Z" itemprop="dateModified">2015-07-04</time>
+    <time datetime="2015-07-04T09:16:07.000Z" itemprop="datePublished">2015-07-04</time>
+    更新日期:<time datetime="2015-07-04T09:16:07.000Z" itemprop="dateModified">2015-07-04</time>
     
   </p>
 </header>
@@ -294,11 +293,10 @@ tags:
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:"><span class="toc-number">1.</span> <span class="toc-text">tags:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title:_OC中的正则表达式初体验"><span class="toc-number">1.</span> <span class="toc-text">title: OC中的正则表达式初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前言:"><span class="toc-number">2.</span> <span class="toc-text">前言:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
 		</div>
 		
-		<p>date: 2015-07-04 14:55:37</p>
-<h2 id="tags:">tags:</h2><blockquote>
+		<h2 id="title:_OC中的正则表达式初体验">title: OC中的正则表达式初体验</h2><h2 id="前言:">前言:</h2><blockquote>
 <p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
 <p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
 <p>本文初步记录了自己在使用过程中的一点体会.</p>
@@ -308,31 +306,21 @@ tags:
 <p>产品设计中,需要用户使用邮箱作为账号来进行登陆,在进行网络验证前,应在本地进行合理的邮箱合法性处理.因此在获取用户输入的信息之后……</p>
 </blockquote>
 <ul>
-<li>验证用户输入的邮箱是否合法<ol>
-<li>定义(正则表达式)规则</li>
-<li>创建表达式对象</li>
-<li>使用正则对象进行验证</li>
-</ol>
+<li><p>验证用户输入的邮箱是否合法</p>
+<p>定义(正则表达式)规则</p>
+<p>创建表达式对象</p>
+<p>使用正则对象进行验证</p>
 </li>
 </ul>
 <blockquote>
 <p>总体来说,只需要处理好上面的三个环节,就可以完成任务了.下面说下具我在代码中的具体实现</p>
 </blockquote>
-<h5 id="代码走起">代码走起</h5><ol>
-<li><p>生成定义的规则</p>
+<h5 id="代码走起">代码走起</h5><p>生成定义的规则</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#23450;&#20041;&#21305;&#37197;&#35268;&#21017; &#10;NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>创建表达式对象</p>
+<p>创建表达式对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>使用表达式对象进行验证</p>
+<p>使用表达式对象进行验证</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#26681;&#25454;&#39564;&#35777;&#32467;&#26524;&#25968;&#32452;&#30340;&#38271;&#24230;&#26159;&#21542;&#20026;&#38646;,&#21363;&#21487;&#20570;&#20986;&#21028;&#26029;&#10;NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 <h5 id="最终方案">最终方案</h5><blockquote>
 <p>因为可能会经常用到类似的功能,比如验证密码强度,手机号码,QQ号码等,最终采用字符串分类来实现拓展</p>
 <ul>
@@ -341,9 +329,9 @@ tags:
 </ul>
 </blockquote>
 <p><strong>NSString+ZDRegular.h</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
 <p><strong>NSString+ZDRegular.m</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
 <h5 id="补充">补充</h5><blockquote>
 <p>关于正则表达式的常用元字符的使用说明</p>
 <p><code>^</code>:匹配字符串开头</p>
@@ -356,7 +344,7 @@ tags:
 <p><code>\w</code>:匹配任意字母或数字</p>
 </blockquote>
 <p><em>根据上面的正则表达式简单规则,我们可以在分类文件中继续写出一个验证手机号码合法性的方法</em></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;// &#39564;&#35777;&#25163;&#26426;&#21495;&#30721;&#26159;&#21542;&#21512;&#27861;&#10;- (BOOL)isMobilePhone&#123;&#10;  NSString *pattern = @&#34;^1[3-9]\\d&#123;9&#125;$&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#39564;&#35777;&#25163;&#26426;&#21495;&#30721;&#26159;&#21542;&#21512;&#27861;&#10;- (BOOL)isMobilePhone&#123;&#10;  NSString *pattern = @&#34;^1[3-9]\\d&#123;9&#125;$&#34;;&#10;  return [self matchesWithPattern:pattern];&#10;&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="说明">说明</h5><p><em>本人尚在学习中,文中难免有误,欢迎大家指正</em></p>
   
 	</div>
@@ -367,7 +355,7 @@ tags:
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/07/04/OC中的正则表达式初体验/" data-title="OC中的正则表达式初体验 | 求知若渴 大智若愚" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/07/04/OC中的正则表达式初体验/" data-title="求知若渴 大智若愚" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -389,7 +377,7 @@ tags:
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/07/04/OC中的正则表达式初体验/" data-title="OC中的正则表达式初体验" data-url="http://yoursite.com/2015/07/04/OC中的正则表达式初体验/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/04/OC中的正则表达式初体验/" data-title="" data-url="http://yoursite.com/2015/07/04/OC中的正则表达式初体验/"></div>
 <!-- 多说评论框 end -->
 </div>  
 
@@ -402,7 +390,7 @@ tags:
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:"><span class="toc-number">1.</span> <span class="toc-text">tags:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title:_OC中的正则表达式初体验"><span class="toc-number">1.</span> <span class="toc-text">title: OC中的正则表达式初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前言:"><span class="toc-number">2.</span> <span class="toc-text">前言:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
@@ -429,7 +417,7 @@ tags:
   <ul class="entry">
     
       <li>
-        <a href="/2015/07/04/OC中的正则表达式初体验/">OC中的正则表达式初体验</a>
+        <a href="/2015/07/04/OC中的正则表达式初体验/"></a>
       </li>
     
       <li>

@@ -1,588 +1,659 @@
-
- <!DOCTYPE HTML>
-<html >
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>求知若渴 大智若愚</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="Alexcai">
-    
-    <meta name="description" content="热爱iOS">
-    
-    
-    
-    
-    <link rel="alternate" href="/atom.xml## RSS address." title="求知若渴 大智若愚" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/pacman.png">
-    
-    
-    <link rel="apple-touch-icon" href="/img/fish_footer.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/fish_footer.jpg">
-    
-
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-    
-    <!-- 标签云侵入样式 -->
-  <style>
-    .tagcloudlist {position:relative; height:300px;}
-    .tagcloudlist  a {position:absolute; top:0px; left:0px;  text-decoration:none; padding: 3px 6px; }
-    .tagcloudlist  a:hover {border: 1px solid #eee; background: #000; }
-    
-    .ac_results {
-            padding: 0px;
-            border: 1px solid black;
-            background-color: white;
-            overflow: hidden;
-            z-index: 99999;
-        }
-    .ac_results ul {
-        width: 100%;
-        list-style-position: outside;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .ac_results li {
-        margin: 0px;
-        padding: 2px 5px;
-        cursor: default;
-        display: block;
-        font: menu;
-        font-size: 12px;
-        line-height: 16px;
-        overflow: hidden;
-    }
-    .ac_loading {
-        background: #FFF;
-    }
-    .ac_odd {
-        background-color: #EEE;
-    }
-    .ac_over {
-        background-color: #AAA;
-        color: #FFF;
-    }
-
-  </style>
-
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/autocomplete.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/miaov.js"></script>
+  <title>求知若渴 大智若愚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="热爱iOS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="求知若渴 大智若愚">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="求知若渴 大智若愚">
+<meta property="og:description" content="热爱iOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="求知若渴 大智若愚">
+<meta name="twitter:description" content="热爱iOS">
+  
+    <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
-
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/fish_font.jpg" alt="求知若渴 大智若愚" title="求知若渴 大智若愚"/></a>
-			</div>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
 			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="求知若渴 大智若愚">求知若渴 大智若愚</a></h1>
-				<h2 class="blog-motto">老菜居士</h2>
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Alexcai</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">老菜居士</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
-			</a></div>
-			<nav class="animated">
-				<ul>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
 					
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/about">About Me</a></li>
-					
-					
-					<li> <a href="/atom.xml">RSS</a> </li>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
 
-					<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
-	function c() {
-		var e = document.createElement("link");
-		e.setAttribute("type", "text/css");
-		e.setAttribute("rel", "stylesheet");
-		e.setAttribute("href", f);
-		e.setAttribute("class", l);
-		document.body.appendChild(e)
-	}
- 
-	function h() {
-		var e = document.getElementsByClassName(l);
-		for (var t = 0; t < e.length; t++) {
-			document.body.removeChild(e[t])
-		}
-	}
- 
-	function p() {
-		var e = document.createElement("div");
-		e.setAttribute("class", a);
-		document.body.appendChild(e);
-		setTimeout(function() {
-			document.body.removeChild(e)
-		}, 100)
-	}
- 
-	function d(e) {
-		return {
-			height : e.offsetHeight,
-			width : e.offsetWidth
-		}
-	}
- 
-	function v(i) {
-		var s = d(i);
-		return s.height > e && s.height < n && s.width > t && s.width < r
-	}
- 
-	function m(e) {
-		var t = e;
-		var n = 0;
-		while (!!t) {
-			n += t.offsetTop;
-			t = t.offsetParent
-		}
-		return n
-	}
- 
-	function g() {
-		var e = document.documentElement;
-		if (!!window.innerWidth) {
-			return window.innerHeight
-		} else if (e && !isNaN(e.clientHeight)) {
-			return e.clientHeight
-		}
-		return 0
-	}
- 
-	function y() {
-		if (window.pageYOffset) {
-			return window.pageYOffset
-		}
-		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-	}
- 
-	function E(e) {
-		var t = m(e);
-		return t >= w && t <= b + w
-	}
- 
-	function S() {
-		var e = document.createElement("audio");
-		e.setAttribute("class", l);
-		e.src = i;
-		e.loop = false;
-		e.addEventListener("canplay", function() {
-			setTimeout(function() {
-				x(k)
-			}, 500);
-			setTimeout(function() {
-				N();
-				p();
-				for (var e = 0; e < O.length; e++) {
-					T(O[e])
-				}
-			}, 15500)
-		}, true);
-		e.addEventListener("ended", function() {
-			N();
-			h()
-		}, true);
-		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-		document.body.appendChild(e);
-		e.play()
-	}
- 
-	function x(e) {
-		e.className += " " + s + " " + o
-	}
- 
-	function T(e) {
-		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-	}
- 
-	function N() {
-		var e = document.getElementsByClassName(s);
-		var t = new RegExp("\\b" + s + "\\b");
-		for (var n = 0; n < e.length; ) {
-			e[n].className = e[n].className.replace(t, "")
-		}
-	}
- 
-	var e = 30;
-	var t = 30;
-	var n = 350;
-	var r = 350;
-	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-	var s = "mw-harlem_shake_me";
-	var o = "im_first";
-	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-	var a = "mw-strobe_light";
-	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-	var l = "mw_added_css";
-	var b = g();
-	var w = y();
-	var C = document.getElementsByTagName("*");
-	var k = null;
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			if (E(A)) {
-				k = A;
-				break
-			}
-		}
-	}
-	if (A === null) {
-		console.warn("Could not find a node of the right size. Please try a different page.");
-		return
-	}
-	c();
-	S();
-	var O = [];
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			O.push(A)
-		}
-	}
-})()    '>High一下</a> </li>
-
-
-				<li>
-					
-					 <form id="searchform" class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-                    <label>Search</label>
-                    <input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
-               		 </form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-
-    </header>
-    <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/07/04/LeanCloud快速集成IM功能-边学边做/" title="LeanCloud快速集成IM功能-边学边做" itemprop="url">
-  
-    <h1 itemprop="name">LeanCloud快速集成IM功能-边学边做</h1>
-    
-     
-           <p itemprop="description" >给app快速集成IM功能的大体实现有两种方式:
-
-搭建自己的通信服务器(比如搭建基于XMPP的Openfire)
-
-使用第三方提供的服务器(比如融云,环信以及本文的LeanCloud)
-每种方式都各有利弊,主要看公司的情况而定,大公司一般都采用自己的通信服务器,采用第三方服务器的</p>
-        
-    
-    <time datetime="2015-07-04T11:41:51.000Z" itemprop="datePublished">2015-07-04</time>
-  </a>
-</section>
- <script src="/js/snowstorm-min.js"></script>
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"voidy"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/07/04/OC中的正则表达式初体验/" title="OC中的正则表达式初体验" itemprop="url">
-  
-    <h1 itemprop="name">OC中的正则表达式初体验</h1>
-    
-     
-           <p itemprop="description" >正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.
-
-从一个验证邮箱是否合法的需求说起
-产品设计中,</p>
-        
-    
-    <time datetime="2015-07-04T09:28:19.000Z" itemprop="datePublished">2015-07-04</time>
-  </a>
-</section>
- <script src="/js/snowstorm-min.js"></script>
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"voidy"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/07/04/Mac下使用hexo搭建blog/" title="使用Hexo在github上搭建自己的静态Blog  —(Mac篇)" itemprop="url">
-  
-    <h1 itemprop="name">使用Hexo在github上搭建自己的静态Blog  —(Mac篇)</h1>
-    
-     
-           <p itemprop="description" >尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
-
-本地搭建
-环境准备
-
-git环境就不说了,基本上只要安装了Xcode并且带了命令行工具,终端里就可以git了.
-
-安装nvm:推荐使用这个来安装n</p>
-        
-    
-    <time datetime="2015-07-04T03:05:31.000Z" itemprop="datePublished">2015-07-04</time>
-  </a>
-</section>
- <script src="/js/snowstorm-min.js"></script>
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"voidy"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/07/04/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
-    
-    <time datetime="2015-07-04T02:58:33.000Z" itemprop="datePublished">2015-07-04</time>
-  </a>
-</section>
- <script src="/js/snowstorm-min.js"></script>
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"voidy"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-
-
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
-<aside class="clearfix">
-
-  <div>
-<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
-</div>
-
-
-  <div class="music">
-<p class="asidetitle">Music</p>
-<div class="music_player clearfix">
-<script type="text/javascript" src="http://www.xiami.com/widget/player-single?uid=45521081&sid=381307&mode=js"></script>
-</div>
-</div>
-
-  
-
-  
-<div class="categorieslist">
-<p class="asidetitle">Recent Posts</p>
-  <ul class="entry">
-    
-      <li>
-        <a href="/2015/07/04/LeanCloud快速集成IM功能-边学边做/">LeanCloud快速集成IM功能-边学边做</a>
-      </li>
-    
-      <li>
-        <a href="/2015/07/04/OC中的正则表达式初体验/">OC中的正则表达式初体验</a>
-      </li>
-    
-      <li>
-        <a href="/2015/07/04/Mac下使用hexo搭建blog/">使用Hexo在github上搭建自己的静态Blog  —(Mac篇)</a>
-      </li>
-    
-      <li>
-        <a href="/2015/07/04/hello-world/">Hello World</a>
-      </li>
-    
-  </ul>
-</div>
-
-
-  
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li></ul>
-  </div>
-
-
-  
-<div class="widget">
-  <p class="asidetitle">Recent Comments</p>
-    
-<ul class="entry ds-recent-comments" data-num-items="8" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="70"></ul>
-</div>
-
-
-  
-
-
-  <div class="linklist">
-<h3 rel="grow" class="grow asidetitle">Blogroll</h3>
-<ul class="entry">
-<li><a href="http://www.cnblogs.com/voidy/" title="voidy's Blog">小鱼</a></li>
-<li><a href="http://haodong.net.cn/" title="haodong">耗子</a></li>
-<li><a href="http://lanlazy.gitcafe.io/" title="lanlazy">兰懒懒</a></li>
-<li><a href="http://chenxiaohua.net/" >努力加餐饭</a></li>
-<li><a href="http://www.techug.com/" >程序师</a></li>
-<li><a href="http://coolshell.cn/" >酷壳</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/" >阮一峰</a></li>
-<li><a href="http://www.chenshake.com/" >陈沙克</a></li>
-<li><a href="http://mindhacks.cn/" >刘未鹏</a></li>
-<li><a href="http://www.cnblogs.com/gorlf/">刘飞</a></li>
-<li><a href="http://rico93.xyz/">Rico</a></li>
-</ul>
-</div>
-
-</aside>
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
 </div>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Alexcai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="null" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Alexcai</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">老菜居士</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
 	</div>
-	
-	
-	<div class="social-font clearfix">
-		
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
-		
-		<a href="http://yoursite.com" target="_blank" title="Alexcai">Alexcai</a>
-		
-		</p>
-</div>
-</footer>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-OC中的正则表达式初体验" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/04/OC中的正则表达式初体验/" class="article-date">
+  	<time datetime="2015-07-04T13:54:03.000Z" itemprop="datePublished">2015-07-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
     
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="title:_OC中的正则表达式初体验">title: OC中的正则表达式初体验</h2><blockquote>
+<p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
+<p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
+<p>本文初步记录了自己在使用过程中的一点体会.</p>
+<p>记录点滴,供以后查阅之用.</p>
+</blockquote>
+<h5 id="从一个验证邮箱是否合法的需求说起">从一个验证邮箱是否合法的需求说起</h5><blockquote>
+<p>产品设计中,需要用户使用邮箱作为账号来进行登陆,在进行网络验证前,应在本地进行合理的邮箱合法性处理.因此在获取用户输入的信息之后……</p>
+</blockquote>
+<ul>
+<li><p>验证用户输入的邮箱是否合法</p>
+<p>定义(正则表达式)规则</p>
+<p>创建表达式对象</p>
+<p>使用正则对象进行验证</p>
+</li>
+</ul>
+<blockquote>
+<p>总体来说,只需要处理好上面的三个环节,就可以完成任务了.下面说下具我在代码中的具体实现</p>
+</blockquote>
+<h5 id="代码走起">代码走起</h5><p>生成定义的规则</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;</span><br></pre></td></tr></table></figure>
+<p>创建表达式对象</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];</span><br></pre></td></tr></table></figure>
+<p>使用表达式对象进行验证</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*&#26681;&#25454;&#39564;&#35777;&#32467;&#26524;&#25968;&#32452;&#30340;&#38271;&#24230;&#26159;&#21542;&#20026;&#38646;,&#21363;&#21487;&#20570;&#20986;&#21028;&#26029;*/&#10;NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
+<h5 id="最终方案">最终方案</h5><blockquote>
+<p>因为可能会经常用到类似的功能,比如验证密码强度,手机号码,QQ号码等,最终采用字符串分类来实现拓展</p>
+<ul>
+<li>NSString+ZDRegular.h</li>
+<li>NSString+ZDRegular.m</li>
+</ul>
+</blockquote>
+<p><strong>NSString+ZDRegular.h</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
+<p><strong>NSString+ZDRegular.m</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
+<h5 id="补充">补充</h5><blockquote>
+<p>关于正则表达式的常用元字符的使用说明</p>
+<p><code>^</code>:匹配字符串开头</p>
+<p><code>$</code>:匹配字符串结尾</p>
+<p><code>\d</code>:匹配一位数字</p>
+<p><code>.</code>:匹配换行之外的任意字符</p>
+<p><code>*</code>:匹配0个或多个</p>
+<p><code>?</code>:匹配0个或1个</p>
+<p><code>+</code>:匹配至少1个或多个</p>
+<p><code>\w</code>:匹配任意字母或数字</p>
+</blockquote>
+<p><em>根据上面的正则表达式简单规则,我们可以在分类文件中继续写出一个验证手机号码合法性的方法</em></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#39564;&#35777;&#25163;&#26426;&#21495;&#30721;&#26159;&#21542;&#21512;&#27861;&#10;- (BOOL)isMobilePhone&#123;&#10;  NSString *pattern = @&#34;^1[3-9]\\d&#123;9&#125;$&#34;;&#10;  return [self matchesWithPattern:pattern];&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="说明">说明</h5><p><em>本人尚在学习中,文中难免有误,欢迎大家指正</em></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeanCloud快速集成IM功能-边学边做" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/04/LeanCloud快速集成IM功能-边学边做/" class="article-date">
+  	<time datetime="2015-07-04T11:41:51.000Z" itemprop="datePublished">2015-07-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/04/LeanCloud快速集成IM功能-边学边做/">LeanCloud快速集成IM功能-边学边做</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给app快速集成IM功能的大体实现有两种方式:</p>
+<ul>
+<li><p>搭建自己的通信服务器(比如搭建基于XMPP的Openfire)</p>
+</li>
+<li><p>使用第三方提供的服务器(比如融云,环信以及本文的LeanCloud)</p>
+<p><em>每种方式都各有利弊,主要看公司的情况而定,大公司一般都采用自己的通信服务器,采用第三方服务器的方式比较适合初创型互联网公司</em></p>
+</li>
+<li><p>本文初步小结在开发中使用LeanCloud中的一些坑.</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="从集成LeanCloud的Framework开始">从集成LeanCloud的Framework开始</h2><blockquote>
+<p>关于LeanCloud的文档和技术支持这里就不吐槽了.直接爆自己遇到的一些坑.</p>
+</blockquote>
+<p><strong>小坑1</strong></p>
+<blockquote>
+<p>按照官方的说明文档集成框架之后,第一次运行,会报下面的一个错误,这个一看就比较容易解决.但官方文档竟然漏掉了sqlite这个库(也可能是我粗心,未在官方说明中找到相关信息)</p>
+</blockquote>
+<p><code>symbols for architecture i386:</code></p>
+<p><code>&quot;_sqlite3_bind_blob&quot;, referenced from:</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-[LCDatabase <span class="string">bindObject:</span><span class="string">toColumn:</span><span class="string">inStatement:</span>] <span class="keyword">in</span> AVOSCloud(LCDatabase.o)</span><br></pre></td></tr></table></figure>
+<p><em>解决办法</em></p>
+<ul>
+<li>选择工程—选择Target— 选择Build Phases — 选择Link Binary With Libraries— 点击+号 </li>
+<li>添加libsqlite3.dylib即可</li>
+</ul>
+<p><strong>小坑2</strong></p>
+<blockquote>
+<p>先看错误提示:</p>
+<p><code>-[LCDatabase userVersion]: unrecognized selector sent to instance 0x7a4ed7f0</code></p>
+<p>这个坑算是比较隐蔽的,当时遇到的时候,google了世界也没有具体的针对性的说明,而且官方的技术工单是需要付费的(#_#).只好自己动手了.</p>
+</blockquote>
+<p>辛辛苦苦搭建好界面,写好初始化代码之后,编译运行,UI正常,但是发送message的时候,直接崩溃!</p>
+<p>起初,看错误,是经典信息啊,容易看出是数据库调用了一个没有定义的方法,使用断点查看栈信息后,可以找到如下:</p>
+<p><code>Queue:fmdb &lt;LCDatebaseQueue:....&gt;</code></p>
+<ul>
+<li>猜想1:当时以为是LeanCloud在内部使用第三方数据库框架FMDB而未引用其头文件,于是自己动手直接再项目中添加FMDB,结果无效,问题依旧.</li>
+</ul>
+<ul>
+<li>猜想2:可能是LeanCloud框架中使用Category,于是在<code>Other Linker Flags</code>中添加-Objc.结果问题依旧.</li>
+</ul>
+<ul>
+<li>在猜想2失败后,纠结了好一阵,后来无意在官网上查到-all_load这个参数.于是乎有了下面的解决办法</li>
+</ul>
+<p><em>解决办法</em></p>
+<p>将猜想2中的-Objc换为-all_load,问题解决.</p>
+<blockquote>
+<p>姿势补充:</p>
+<p>-Objc:的作用是将静态库中<code>所有</code>的和<code>对象相关的文件</code>都加载进来.</p>
+<p>-all_load:加载静态库中<code>所有文件</code>,包括没有objc的代码文件.</p>
+</blockquote>
+<p><em>后续</em></p>
+<blockquote>
+<p>后续还要做一个与web端通信的研究,待续中….</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
 
 
 
+
+
+  
+    <article id="post-Mac下使用hexo搭建blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/04/Mac下使用hexo搭建blog/" class="article-date">
+  	<time datetime="2015-07-04T03:05:31.000Z" itemprop="datePublished">2015-07-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/04/Mac下使用hexo搭建blog/">使用Hexo在github上搭建自己的静态Blog  —(Mac篇)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:</p>
+</blockquote>
+<h2 id="本地搭建">本地搭建</h2><ul>
+<li><p>环境准备</p>
+<ol>
+<li><p>git环境就不说了,基本上只要安装了Xcode并且带了命令行工具,终端里就可以git了.</p>
+</li>
+<li><p>安装nvm:推荐使用这个来安装node.js,尽管网上不少教程都说可以直接去nodejs官网<a href="http://nodejs.org" target="_blank" rel="external">http://nodejs.org</a>下载pkg安装包,个人实践不太靠谱,而且还有被墙的风险,问题较多.  </p>
+<p>在终端中输入命令   </p>
+<p><code>curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh</code></p>
+</li>
+<li><p>重启终端即可.</p>
+</li>
+</ol>
+</li>
+<li><p>安装node.js</p>
+<ul>
+<li>1.终端输入命令:</li>
+</ul>
+<p>​         <code>nvm install 0.10</code></p>
+<p>​       这个过程要稍微久一点,网络不好的话,要耐心点,之后就可以安装hexo.</p>
+<p>​</p>
+<p>​</p>
+</li>
+<li><p>安装hexo(这个是重点)</p>
+<ul>
+<li><p>终端输入命令:</p>
+<p><code>npm install -g hexo</code></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p>初始化blog文件夹</p>
+<ul>
+<li>终端下输入命令:</li>
+</ul>
+<p>​     <code>mkdir hexoBLOG</code></p>
+<p>​     <code>cd hexoBlog</code></p>
+<p>​     <code>hexo init</code></p>
+<p>​</p>
+<ul>
+<li><p>如果hexo版本是2.6以后的,还需要执行下面命令:</p>
+<p><code>npm install hexo-renderer-ejs --save</code> </p>
+<p><code>npm install hexo-renderer-stylus --save</code> </p>
+<p><code>npm install hexo-renderer-marked --save</code></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p>新建博文</p>
+<p><code>hexo new 博文名字</code>(注意,博文名字后面不需要添加.md后缀)</p>
+<ul>
+<li>这条命令会在当前目录下的source/_posts/生成一个.md后缀的文件</li>
+<li>使用markdown软件编辑博文后保存.</li>
+</ul>
+</li>
+<li><p>生成html</p>
+<p><code>hexo generate</code></p>
+</li>
+<li><p>本地预览</p>
+<p><code>hexo server</code></p>
+</li>
+</ul>
+<h2 id="发布到github-io">发布到github.io</h2><ol>
+<li><p>注册github账号.</p>
+</li>
+<li><p>创建仓库,名字必须为自己的登录名格式为:登录名.github.io</p>
+</li>
+<li><p>记录好仓库的https地址</p>
+</li>
+<li><p>在终端里输入发布命令</p>
+<p><code>hexo deploy</code></p>
+<blockquote>
+<p>如果hexo为2.6之后的版本,需要修改_config.yml文件</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>在文件中找到deploy部分,修改type的值为git(注意:type和git之间要保留一个空格)</p>
+<p>参考样例:</p>
+<p>deploy:</p>
+<p>​    type: git</p>
+<p>   repository: <a href="https://github.com/leiocai/leiocai.github.io.git" target="_blank" rel="external">https://github.com/leiocai/leiocai.github.io.git</a></p>
+</blockquote>
+<ol>
+<li>如需修改主题,可以到hexo官网下载喜欢的主题后,修改_config.yml中的Theme即可.</li>
+</ol>
+<blockquote>
+<p>推荐到hexo的github主题仓库中下载喜欢的theme</p>
+<p><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+</blockquote>
+<h2 id="临时语">临时语</h2><p>本人还在学习搭建的路上,文中不足难免,对于定制更细节的内容,还需要深入研究配置文件(_config.yml),这个还在摸索中….</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/04/hello-world/" class="article-date">
+  	<time datetime="2015-07-04T02:58:33.000Z" itemprop="datePublished">2015-07-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/04/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Alexcai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
 
 
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?9723e4a6c94c2638d915c2747e92aef9";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
-
-<div id="totop" style="position:fixed;bottom:50px;right:50px;cursor: pointer;">
-<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-</div>
-<script src="/js/scrolltop.js"></script>
-
-  </body>
- </html>
-
-
-<a href="https://github.com/Voidly"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+  </div>
+</body>
+</html>

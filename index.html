@@ -200,7 +200,7 @@
   
     <div class="article-meta">
       <a href="/2015/07/04/OC中的正则表达式初体验/" class="article-date">
-  	<time datetime="2015-07-04T13:54:03.000Z" itemprop="datePublished">2015-07-04</time>
+  	<time datetime="2015-07-04T14:12:38.000Z" itemprop="datePublished">2015-07-04</time>
 </a>
     </div>
   
@@ -235,7 +235,7 @@
 <p>创建表达式对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];</span><br></pre></td></tr></table></figure>
 <p>使用表达式对象进行验证</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*&#26681;&#25454;&#39564;&#35777;&#32467;&#26524;&#25968;&#32452;&#30340;&#38271;&#24230;&#26159;&#21542;&#20026;&#38646;,&#21363;&#21487;&#20570;&#20986;&#21028;&#26029;*/&#10;NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
 <h5 id="最终方案">最终方案</h5><blockquote>
 <p>因为可能会经常用到类似的功能,比如验证密码强度,手机号码,QQ号码等,最终采用字符串分类来实现拓展</p>
 <ul>
@@ -244,7 +244,7 @@
 </ul>
 </blockquote>
 <p><strong>NSString+ZDRegular.h</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;@end</span><br></pre></td></tr></table></figure>
 <p><strong>NSString+ZDRegular.m</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
 <h5 id="补充">补充</h5><blockquote>

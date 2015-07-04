@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>OC中的正则表达式初体验 | 求知若渴 大智若愚</title>
+    <title>求知若渴 大智若愚</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Alexcai">
     
-    <meta name="description" content="正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.
+    <meta name="description" content="title:  LeanCloud快速集成IM功能-边学边做
 
-从一个验证邮箱是否合法的需求说起
-产品设计中,需要用户使用邮箱作为">
+给app快速集成IM功能的大体实现有两种方式:
+
+搭建自己的通信服务器(比如搭建基于XMPP的Openfire)
+
+使用第三方提供的服务器(比如融云,环信以及本文的LeanCloud)
+每种方式都各有利弊,主要看公司的情况而定,大公司一">
     
     
     
@@ -276,15 +277,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/04/OC中的正则表达式初体验/" title="OC中的正则表达式初体验" itemprop="url">OC中的正则表达式初体验</a>
+      <a href="/2015/07/04/LeanCloud快速集成IM功能-边学边做/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="Alexcai">Alexcai</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-07-04T09:28:19.000Z" itemprop="datePublished">2015-07-04</time>
-    更新日期:<time datetime="2015-07-04T09:28:19.000Z" itemprop="dateModified">2015-07-04</time>
+    <time datetime="2015-07-04T11:27:49.000Z" itemprop="datePublished">2015-07-04</time>
+    更新日期:<time datetime="2015-07-04T11:27:49.000Z" itemprop="dateModified">2015-07-04</time>
     
   </p>
 </header>
@@ -293,59 +294,69 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">5.</span> <span class="toc-text">说明</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从集成LeanCloud的Framework开始"><span class="toc-number">1.</span> <span class="toc-text">从集成LeanCloud的Framework开始</span></a></li></ol>
 		</div>
 		
-		<blockquote>
-<p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
-<p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
-<p>本文初步记录了自己在使用过程中的一点体会.</p>
-<p>记录点滴,供以后查阅之用.</p>
-</blockquote>
-<h5 id="从一个验证邮箱是否合法的需求说起">从一个验证邮箱是否合法的需求说起</h5><blockquote>
-<p>产品设计中,需要用户使用邮箱作为账号来进行登陆,在进行网络验证前,应在本地进行合理的邮箱合法性处理.因此在获取用户输入的信息之后……</p>
-</blockquote>
+		<p> title:  LeanCloud快速集成IM功能-边学边做</p>
+<blockquote>
+<p>给app快速集成IM功能的大体实现有两种方式:</p>
 <ul>
-<li><p>验证用户输入的邮箱是否合法</p>
-<p>定义(正则表达式)规则</p>
-<p>创建表达式对象</p>
-<p>使用正则对象进行验证</p>
+<li><p>搭建自己的通信服务器(比如搭建基于XMPP的Openfire)</p>
+</li>
+<li><p>使用第三方提供的服务器(比如融云,环信以及本文的LeanCloud)</p>
+<p><em>每种方式都各有利弊,主要看公司的情况而定,大公司一般都采用自己的通信服务器,采用第三方服务器的方式比较适合初创型互联网公司</em></p>
+</li>
+<li><p>本文初步小结在开发中使用LeanCloud中的一些坑.</p>
 </li>
 </ul>
+</blockquote>
+<h2 id="从集成LeanCloud的Framework开始">从集成LeanCloud的Framework开始</h2><blockquote>
+<p>关于LeanCloud的文档和技术支持这里就不吐槽了.直接爆自己遇到的一些坑.</p>
+</blockquote>
+<p><strong>小坑1</strong></p>
 <blockquote>
-<p>总体来说,只需要处理好上面的三个环节,就可以完成任务了.下面说下具我在代码中的具体实现</p>
+<p>按照官方的说明文档集成框架之后,第一次运行,会报下面的一个错误,这个一看就比较容易解决.但官方文档竟然漏掉了sqlite这个库(也可能是我粗心,未在官方说明中找到相关信息)</p>
 </blockquote>
-<h5 id="代码走起">代码走起</h5><p>生成定义的规则</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#23450;&#20041;&#21305;&#37197;&#35268;&#21017; &#10;NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;</span><br></pre></td></tr></table></figure>
-<p>创建表达式对象</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];</span><br></pre></td></tr></table></figure>
-<p>使用表达式对象进行验证</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#26681;&#25454;&#39564;&#35777;&#32467;&#26524;&#25968;&#32452;&#30340;&#38271;&#24230;&#26159;&#21542;&#20026;&#38646;,&#21363;&#21487;&#20570;&#20986;&#21028;&#26029;&#10;NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
-<h5 id="最终方案">最终方案</h5><blockquote>
-<p>因为可能会经常用到类似的功能,比如验证密码强度,手机号码,QQ号码等,最终采用字符串分类来实现拓展</p>
+<p><code>symbols for architecture i386:</code></p>
+<p><code>&quot;_sqlite3_bind_blob&quot;, referenced from:</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-[LCDatabase <span class="string">bindObject:</span><span class="string">toColumn:</span><span class="string">inStatement:</span>] <span class="keyword">in</span> AVOSCloud(LCDatabase.o)</span><br></pre></td></tr></table></figure>
+<p><em>解决办法</em></p>
 <ul>
-<li>NSString+ZDRegular.h</li>
-<li>NSString+ZDRegular.m</li>
+<li><p>选择工程—选择Target— 选择Build Phases — 选择Link Binary With Libraries— 点击+号</p>
+<p><img src="/Users/Alexcai/Pictures/com.tencent.ScreenCapture/QQ20150704-1@2x.png" alt="QQ20150704-1@2x"></p>
+</li>
+<li><p>添加libsqlite3.dylib即可</p>
+</li>
 </ul>
+<p><strong>小坑2</strong></p>
+<blockquote>
+<p>先看错误提示:</p>
+<p><code>-[LCDatabase userVersion]: unrecognized selector sent to instance 0x7a4ed7f0</code></p>
+<p>这个坑算是比较隐蔽的,当时遇到的时候,google了世界也没有具体的针对性的说明,而且官方的技术工单是需要付费的(#_#).只好自己动手了.</p>
 </blockquote>
-<p><strong>NSString+ZDRegular.h</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
-<p><strong>NSString+ZDRegular.m</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
-<h5 id="补充">补充</h5><blockquote>
-<p>关于正则表达式的常用元字符的使用说明</p>
-<p><code>^</code>:匹配字符串开头</p>
-<p><code>$</code>:匹配字符串结尾</p>
-<p><code>\d</code>:匹配一位数字</p>
-<p><code>.</code>:匹配换行之外的任意字符</p>
-<p><code>*</code>:匹配0个或多个</p>
-<p><code>?</code>:匹配0个或1个</p>
-<p><code>+</code>:匹配至少1个或多个</p>
-<p><code>\w</code>:匹配任意字母或数字</p>
+<p>辛辛苦苦搭建好界面,写好初始化代码之后,编译运行,UI正常,但是发送message的时候,直接崩溃!</p>
+<p>起初,看错误,是经典信息啊,容易看出是数据库调用了一个没有定义的方法,使用断点查看栈信息后,可以找到如下:</p>
+<p><code>Queue:fmdb &lt;LCDatebaseQueue:....&gt;</code></p>
+<ul>
+<li>猜想1:当时以为是LeanCloud在内部使用第三方数据库框架FMDB而未引用其头文件,于是自己动手直接再项目中添加FMDB,结果无效,问题依旧.</li>
+</ul>
+<ul>
+<li>猜想2:可能是LeanCloud框架中使用Category,于是在<code>Other Linker Flags</code>中添加-Objc.结果问题依旧.</li>
+</ul>
+<ul>
+<li>在猜想2失败后,纠结了好一阵,后来无意在官网上查到-all_load这个参数.于是乎有了下面的解决办法</li>
+</ul>
+<p><em>解决办法</em></p>
+<p>将猜想2中的-Objc换为-all_load,问题解决.</p>
+<blockquote>
+<p>姿势补充:</p>
+<p>-Objc:的作用是将静态库中<code>所有</code>的和<code>对象相关的文件</code>都加载进来.</p>
+<p>-all_load:加载静态库中<code>所有文件</code>,包括没有objc的代码文件.</p>
 </blockquote>
-<p><em>根据上面的正则表达式简单规则,我们可以在分类文件中继续写出一个验证手机号码合法性的方法</em></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#39564;&#35777;&#25163;&#26426;&#21495;&#30721;&#26159;&#21542;&#21512;&#27861;&#10;- (BOOL)isMobilePhone&#123;&#10;  NSString *pattern = @&#34;^1[3-9]\\d&#123;9&#125;$&#34;;&#10;  return [self matchesWithPattern:pattern];&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="说明">说明</h5><p><em>本人尚在学习中,文中难免有误,欢迎大家指正</em></p>
+<p><em>后续</em></p>
+<blockquote>
+<p>后续还要做一个与web端通信的研究,待续中….</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -355,7 +366,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/07/04/OC中的正则表达式初体验/" data-title="OC中的正则表达式初体验 | 求知若渴 大智若愚" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/07/04/LeanCloud快速集成IM功能-边学边做/" data-title="求知若渴 大智若愚" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -364,19 +375,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="next" >
- <a href="/2015/07/04/LeanCloud快速集成IM功能-边学边做/" title="">
-  <strong>NEXT:</strong><br/>
-  <span>
-  (no title)</span>
-</a>
-</div>
-
 
 <div class="prev">
-<a href="/2015/07/04/Mac下使用hexo搭建blog/"  title="使用Hexo在github上搭建自己的静态Blog  —(Mac篇)">
+<a href="/2015/07/04/OC中的正则表达式初体验/"  title="OC中的正则表达式初体验">
  <strong>PREVIOUS:</strong><br/> 
- <span>使用Hexo在github上搭建自己的静态Blog  —(Mac篇)
+ <span>OC中的正则表达式初体验
 </span>
 </a>
 </div>
@@ -385,7 +388,7 @@
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/07/04/OC中的正则表达式初体验/" data-title="OC中的正则表达式初体验" data-url="http://yoursite.com/2015/07/04/OC中的正则表达式初体验/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/04/LeanCloud快速集成IM功能-边学边做/" data-title="" data-url="http://yoursite.com/2015/07/04/LeanCloud快速集成IM功能-边学边做/"></div>
 <!-- 多说评论框 end -->
 </div>  
 
@@ -398,7 +401,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">5.</span> <span class="toc-text">说明</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从集成LeanCloud的Framework开始"><span class="toc-number">1.</span> <span class="toc-text">从集成LeanCloud的Framework开始</span></a></li></ol>
   </div>
 
 <div id="asidepart">

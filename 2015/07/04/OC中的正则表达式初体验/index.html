@@ -9,13 +9,14 @@
     
     <meta name="author" content="Alexcai">
     
-    <meta name="description" content="title: OC中的正则表达式初体验前言:
+    <meta name="description" content="title: OC中的正则表达式初体验
+前言:
 正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
 正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
 本文初步记录了自己在使用过程中的一点体会.
 记录点滴,供以后查阅之用.
 
-从一个验证邮箱是否合">
+从一个验证邮箱是否">
     
     
     
@@ -283,8 +284,8 @@
       <a href="http://yoursite.com" title="Alexcai">Alexcai</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-07-04T09:16:07.000Z" itemprop="datePublished">2015-07-04</time>
-    更新日期:<time datetime="2015-07-04T09:16:07.000Z" itemprop="dateModified">2015-07-04</time>
+    <time datetime="2015-07-04T09:21:46.000Z" itemprop="datePublished">2015-07-04</time>
+    更新日期:<time datetime="2015-07-04T09:21:46.000Z" itemprop="dateModified">2015-07-04</time>
     
   </p>
 </header>
@@ -293,10 +294,11 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title:_OC中的正则表达式初体验"><span class="toc-number">1.</span> <span class="toc-text">title: OC中的正则表达式初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前言:"><span class="toc-number">2.</span> <span class="toc-text">前言:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言:"><span class="toc-number">1.</span> <span class="toc-text">前言:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
 		</div>
 		
-		<h2 id="title:_OC中的正则表达式初体验">title: OC中的正则表达式初体验</h2><h2 id="前言:">前言:</h2><blockquote>
+		<p>  title: OC中的正则表达式初体验</p>
+<h2 id="前言:">前言:</h2><blockquote>
 <p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
 <p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
 <p>本文初步记录了自己在使用过程中的一点体会.</p>
@@ -390,7 +392,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title:_OC中的正则表达式初体验"><span class="toc-number">1.</span> <span class="toc-text">title: OC中的正则表达式初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前言:"><span class="toc-number">2.</span> <span class="toc-text">前言:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言:"><span class="toc-number">1.</span> <span class="toc-text">前言:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#从一个验证邮箱是否合法的需求说起"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">从一个验证邮箱是否合法的需求说起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码走起"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">代码走起</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终方案"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">最终方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#补充"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#说明"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">说明</span></a></li></ol></li></ol></li></ol></li></ol>
   </div>
 
 <div id="asidepart">

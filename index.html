@@ -200,7 +200,7 @@
   
     <div class="article-meta">
       <a href="/2015/07/07/iOS中使用模版引擎渲染HTML摸索/" class="article-date">
-  	<time datetime="2015-07-07T09:26:41.000Z" itemprop="datePublished">2015-07-07</time>
+  	<time datetime="2015-07-07T09:35:35.000Z" itemprop="datePublished">2015-07-07</time>
 </a>
     </div>
   
@@ -225,7 +225,12 @@
 <p>具体样式需要根据需求实际编写.本文样例如下</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Template Demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    &#123;&#123;littleText&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span></span><br><span class="line">        &#123;&#123;bigText&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意:</strong>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#62; &#20808;&#30475;&#30475;&#20351;&#29992;UIWebView&#21152;&#36733;&#26410;&#32463;&#28210;&#26579;&#36807;&#25928;&#26524;&#10;&#10;``` objective-c&#10;//&#10;//  ViewController.m&#10;//  HTML&#28210;&#26579;&#10;//&#10;//  Created by Alexcai on 15/7/7.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;ViewController.h&#34;&#10;#import &#34;MGTemplateEngine.h&#34;   &#10;#import &#34;ICUTemplateMatcher.h&#34;&#10;@interface ViewController () &#60;MGTemplateEngineDelegate&#62;&#10;@property (weak, nonatomic) IBOutlet UIWebView *htmlWebview;&#10;@end&#10;&#10;@implementation ViewController&#10;&#10;- (void)viewDidLoad &#123;&#10;    [super viewDidLoad];&#10;&#10;    // &#33719;&#21462;html&#25991;&#20214;&#30340;&#36335;&#24452;&#10;     NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@&#34;Template&#34; ofType:@&#34;html&#34;];&#10;&#10;    // &#33719;&#21462;html&#27169;&#29256;&#25991;&#20214;&#20869;&#23481;&#10;     NSString *htmlString = [[NSString alloc]initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];&#10;&#10;    // &#20351;&#29992;webview&#21152;&#36733;&#27169;&#29256;&#25991;&#20214;&#10;    [self.htmlWebview loadHTMLString:htmlString baseURL:nil];   &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong>  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;littleText&#125;&#125;和&#123;&#123;bigText&#125;&#125;就是后面要被实际数据进行替换的一个占位标识.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>先看看使用UIWebView加载未经渲染过效果</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  ViewController.m&#10;//  HTML&#28210;&#26579;&#10;//&#10;//  Created by Alexcai on 15/7/7.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;ViewController.h&#34;&#10;#import &#34;MGTemplateEngine.h&#34;   &#10;#import &#34;ICUTemplateMatcher.h&#34;&#10;@interface ViewController () &#60;MGTemplateEngineDelegate&#62;&#10;@property (weak, nonatomic) IBOutlet UIWebView *htmlWebview;&#10;@end&#10;&#10;@implementation ViewController&#10;&#10;- (void)viewDidLoad &#123;&#10;    [super viewDidLoad];&#10;&#10;    // &#33719;&#21462;html&#25991;&#20214;&#30340;&#36335;&#24452;&#10;     NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@&#34;Template&#34; ofType:@&#34;html&#34;];&#10;&#10;    // &#33719;&#21462;html&#27169;&#29256;&#25991;&#20214;&#20869;&#23481;&#10;     NSString *htmlString = [[NSString alloc]initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];&#10;&#10;    // &#20351;&#29992;webview&#21152;&#36733;&#27169;&#29256;&#25991;&#20214;&#10;    [self.htmlWebview loadHTMLString:htmlString baseURL:nil];   &#10;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>运行效果</li>
 </ul>
@@ -244,23 +249,22 @@
 <p>执行后续的操作即可.</p>
 </blockquote>
 <h4 id="注意">注意</h4><blockquote>
-<ol>
-<li>HTML模版中的占位标识写法不要随意更改,固定为<code></code></li>
-<li>setObject 不要写成 setValue,否则导致工程运行崩溃.</li>
-</ol>
+<ul>
+<li>HTML模版中的占位标识写法不要随意更改,固定写法为:</li>
+</ul>
 </blockquote>
-<h4 id="后续(未完)">后续(未完)</h4><blockquote>
-<p> 本文仅是MGTemplateEngine引擎的基本用法,还可以自定义匹配和过滤的条件,功能丰富,待深入研究后再做讨论.</p>
-</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;占位标识&#125;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>另一种渲染引擎(下一篇文档再做介绍~)</p>
 <ul>
-<li><p><code>GRMustache</code><a href="https://github.com/groue/GRMustache" target="_blank" rel="external"></a></p>
-<p>​</p>
-</li>
+<li>setObject 不要写成 setValue,否则导致工程运行崩溃.</li>
 </ul>
+</blockquote>
+<h4 id="后续(未完)">后续(未完)</h4><blockquote>
+<p> 本文仅是MGTemplateEngine引擎的基本用法,还可以自定义匹配和过滤的条件,功能丰富,待深入研究后再做讨论.</p>
+<p>另一种渲染引擎(下一篇文档再做介绍~)</p>
+<p><code>GRMustache</code><a href="https://github.com/groue/GRMustache" target="_blank" rel="external"></a></p>
 </blockquote>
 
       

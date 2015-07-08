@@ -3,30 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>求知若渴 大智若愚</title>
+  <title>使用Hexo在github上搭建自己的静态Blog  —(Mac篇) | 求知若渴 大智若愚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: OC中的正则表达式初体验
-正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.">
+  <meta name="description" content="尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
+
+本地搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求知若渴 大智若愚">
-<meta property="og:url" content="http://yoursite.com/2015/07/07/OC中的正则表达式初体验/index.html">
+<meta property="og:title" content="使用Hexo在github上搭建自己的静态Blog  —(Mac篇)">
+<meta property="og:url" content="http://yoursite.com/2015/07/08/Mac下使用hexo搭建blog/index.html">
 <meta property="og:site_name" content="求知若渴 大智若愚">
-<meta property="og:description" content="title: OC中的正则表达式初体验
-正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.">
-<meta property="og:updated_time" content="2015-07-07T13:29:23.000Z">
+<meta property="og:description" content="尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
+
+本地搭建">
+<meta property="og:updated_time" content="2015-07-08T02:15:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="求知若渴 大智若愚">
-<meta name="twitter:description" content="title: OC中的正则表达式初体验
-正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.">
+<meta name="twitter:title" content="使用Hexo在github上搭建自己的静态Blog  —(Mac篇)">
+<meta name="twitter:description" content="尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
+
+本地搭建">
   
     <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
   
@@ -43,7 +37,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://ww1.sinaimg.cn/large/46f12941gw1etujjkff90j218o0pqgnr.jpg" class="js-avatar">
+			<img lazy-src="http://ww4.sinaimg.cn/large/46f12941gw1etv56pm7evj20sg0lct9i.jpg" class="js-avatar">
 			
 		</a>
 
@@ -127,7 +121,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/主题/" style="font-size: 20px;">主题</a>
 					</div>
 				</section>
 				
@@ -173,7 +167,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img lazy-src="http://ww1.sinaimg.cn/large/46f12941gw1etujjkff90j218o0pqgnr.jpg" class="js-avatar">
+				<img lazy-src="http://ww4.sinaimg.cn/large/46f12941gw1etv56pm7evj20sg0lct9i.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">Alexcai</h1>
@@ -207,11 +201,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-OC中的正则表达式初体验" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Mac下使用hexo搭建blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/07/OC中的正则表达式初体验/" class="article-date">
-  	<time datetime="2015-07-07T13:29:23.000Z" itemprop="datePublished">2015-07-07</time>
+      <a href="/2015/07/08/Mac下使用hexo搭建blog/" class="article-date">
+  	<time datetime="2015-07-08T02:15:23.000Z" itemprop="datePublished">2015-07-08</time>
 </a>
     </div>
   
@@ -220,59 +214,124 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Hexo在github上搭建自己的静态Blog  —(Mac篇)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="title:_OC中的正则表达式初体验">title: OC中的正则表达式初体验</h2><blockquote>
-<p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
-<p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
-<p>本文初步记录了自己在使用过程中的一点体会.</p>
-<p>记录点滴,供以后查阅之用.</p>
+        <blockquote>
+<p>尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:</p>
 </blockquote>
-<a id="more"></a>
-<h5 id="从一个验证邮箱是否合法的需求说起">从一个验证邮箱是否合法的需求说起</h5><blockquote>
-<p>产品设计中,需要用户使用邮箱作为账号来进行登陆,在进行网络验证前,应在本地进行合理的邮箱合法性处理.因此在获取用户输入的信息之后……</p>
-</blockquote>
+<h2 id="本地搭建">本地搭建</h2><a id="more"></a>
 <ul>
-<li><p>验证用户输入的邮箱是否合法</p>
-<p>定义(正则表达式)规则</p>
-<p>创建表达式对象</p>
-<p>使用正则对象进行验证</p>
+<li><p>环境准备</p>
+<ol>
+<li><p>git环境就不说了,基本上只要安装了Xcode并且带了命令行工具,终端里就可以git了.</p>
+</li>
+<li><p>安装nvm:推荐使用这个来安装node.js,尽管网上不少教程都说可以直接去nodejs官网<a href="http://nodejs.org" target="_blank" rel="external">http://nodejs.org</a>下载pkg安装包,个人实践不太靠谱,而且还有被墙的风险,问题较多.  </p>
+<p>在终端中输入命令   </p>
+<p><code>curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh</code></p>
+</li>
+<li><p>重启终端即可.</p>
+</li>
+</ol>
+</li>
+<li><p>安装node.js</p>
+<ul>
+<li>1.终端输入命令:</li>
+</ul>
+<p>​         <code>nvm install 0.10</code></p>
+<p>​       这个过程要稍微久一点,网络不好的话,要耐心点,之后就可以安装hexo.</p>
+<p>​</p>
+<p>​</p>
+</li>
+<li><p>安装hexo(这个是重点)</p>
+<ul>
+<li><p>终端输入命令:</p>
+<p><code>npm install -g hexo</code></p>
+<p>​</p>
 </li>
 </ul>
-<blockquote>
-<p>总体来说,只需要处理好上面的三个环节,就可以完成任务了.下面说下具我在代码中的具体实现</p>
-</blockquote>
-<h5 id="代码走起">代码走起</h5><p>生成定义的规则</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;</span><br></pre></td></tr></table></figure>
-<p>创建表达式对象</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];</span><br></pre></td></tr></table></figure>
-<p>使用表达式对象进行验证</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
-<h5 id="最终方案">最终方案</h5><blockquote>
-<p>因为可能会经常用到类似的功能,比如验证密码强度,手机号码,QQ号码等,最终采用字符串分类来实现拓展</p>
+</li>
+<li><p>初始化blog文件夹</p>
 <ul>
-<li>NSString+ZDRegular.h</li>
-<li>NSString+ZDRegular.m</li>
+<li>终端下输入命令:</li>
 </ul>
+<p>​     <code>mkdir hexoBLOG</code></p>
+<p>​     <code>cd hexoBlog</code></p>
+<p>​     <code>hexo init</code></p>
+<p>​</p>
+<ul>
+<li><p>如果hexo版本是2.6以后的,还需要执行下面命令:</p>
+<p><code>npm install hexo-renderer-ejs --save</code> </p>
+<p><code>npm install hexo-renderer-stylus --save</code> </p>
+<p><code>npm install hexo-renderer-marked --save</code></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p>新建博文</p>
+<p><code>hexo new 博文名字</code>(注意,博文名字后面不需要添加.md后缀)</p>
+<ul>
+<li>这条命令会在当前目录下的source/_posts/生成一个.md后缀的文件</li>
+<li>使用markdown软件编辑博文后保存.</li>
+</ul>
+</li>
+<li><p>生成html</p>
+<p><code>hexo generate</code></p>
+</li>
+<li><p>本地预览</p>
+<p><code>hexo server</code></p>
+</li>
+</ul>
+<h2 id="发布到github-io">发布到github.io</h2><ol>
+<li><p>注册github账号.</p>
+</li>
+<li><p>创建仓库,名字必须为自己的登录名格式为:登录名.github.io</p>
+</li>
+<li><p>记录好仓库的https地址</p>
+</li>
+<li><p>在终端里输入发布命令</p>
+<p><code>hexo deploy</code></p>
+<blockquote>
+<p>如果hexo为2.6之后的版本,需要修改_config.yml文件</p>
 </blockquote>
-<p><strong>NSString+ZDRegular.h</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;@end</span><br></pre></td></tr></table></figure>
-<p><strong>NSString+ZDRegular.m</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
-<h5 id="补充">补充</h5><blockquote>
-<p>关于正则表达式的常用元字符的使用说明</p>
-<p><code>^</code>:匹配字符串开头</p>
-<p><code>$</code>:匹配字符串结尾</p>
-<p><code>\d</code>:匹配一位数字</p>
-<p><code>.</code>:匹配换行之外的任意字符</p>
-<p><code>*</code>:匹配0个或多个</p>
-<p><code>?</code>:匹配0个或1个</p>
-<p><code>+</code>:匹配至少1个或多个</p>
-<p><code>\w</code>:匹配任意字母或数字</p>
+</li>
+</ol>
+<blockquote>
+<p>在文件中找到deploy部分,修改type的值为git(注意:type和git之间要保留一个空格)</p>
+<p>参考样例:</p>
+<p>deploy:</p>
+<p>​    type: git</p>
+<p>   repository: <a href="https://github.com/leiocai/leiocai.github.io.git" target="_blank" rel="external">https://github.com/leiocai/leiocai.github.io.git</a></p>
 </blockquote>
-<p><em>根据上面的正则表达式简单规则,我们可以在分类文件中继续写出一个验证手机号码合法性的方法</em></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#39564;&#35777;&#25163;&#26426;&#21495;&#30721;&#26159;&#21542;&#21512;&#27861;&#10;- (BOOL)isMobilePhone&#123;&#10;  NSString *pattern = @&#34;^1[3-9]\\d&#123;9&#125;$&#34;;&#10;  return [self matchesWithPattern:pattern];&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="说明">说明</h5><p><em>本人尚在学习中,文中难免有误,欢迎大家指正</em></p>
+<ol>
+<li>如需修改主题,可以到hexo官网下载喜欢的主题后,修改_config.yml中的Theme即可.</li>
+</ol>
+<blockquote>
+<p>推荐到hexo的github主题仓库中下载喜欢的theme</p>
+<p><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+</blockquote>
+<h2 id="临时语">临时语</h2><p>本人还在学习搭建的路上,文中不足难免,对于定制更细节的内容,还需要深入研究配置文件(_config.yml),这个还在摸索中….</p>
 
       
     </div>
@@ -282,9 +341,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2015/07/08/OC中的正则表达式初体验/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          OC中的正则表达式初体验
+        
+      </div>
+    </a>
   
-    <a href="/2015/07/07/Mac下使用hexo搭建blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2015/07/08/LeanCloud快速集成IM功能-边学边做/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeanCloud快速集成IM功能-边学边做</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -313,7 +381,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="OC中的正则表达式初体验" data-title="" data-url="http://yoursite.com/2015/07/07/OC中的正则表达式初体验/"></div>
+	<div class="ds-thread" data-thread-key="Mac下使用hexo搭建blog" data-title="使用Hexo在github上搭建自己的静态Blog  —(Mac篇)" data-url="http://yoursite.com/2015/07/08/Mac下使用hexo搭建blog/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

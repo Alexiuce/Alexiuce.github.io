@@ -3,27 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>求知若渴 大智若愚</title>
+  <title>小白都能上手用Reveal查看第三方App | 求知若渴 大智若愚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 使用Hexo在github上搭建自己的静态Blog  —(Mac篇)
-尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
-
-本地搭建">
+  <meta name="description" content="无论是在项目还是学习中,借鉴其他App的UI界面技术方案,对自身都是一个参考和启发.网上关于Reveal这款软件的基本使用已经介绍的差不多了,但基本都类似,常见的方式是将Reveal的动态库或者静态库添加到工程项目中,或者使用命令(别名)的方式来实现动态的加载Reveal库,这个是最常推荐的方式,最小化侵入项目工程.但这些方法对于新手来说,使用起来还是有一点点小门槛.本文介绍的方法,是另一种思路,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求知若渴 大智若愚">
-<meta property="og:url" content="http://yoursite.com/2015/07/07/Mac下使用hexo搭建blog/index.html">
+<meta property="og:title" content="小白都能上手用Reveal查看第三方App">
+<meta property="og:url" content="http://yoursite.com/2015/07/08/小白都能上手用Reveal查看第三方App/index.html">
 <meta property="og:site_name" content="求知若渴 大智若愚">
-<meta property="og:description" content="title: 使用Hexo在github上搭建自己的静态Blog  —(Mac篇)
-尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
-
-本地搭建">
-<meta property="og:updated_time" content="2015-07-07T13:29:08.000Z">
+<meta property="og:description" content="无论是在项目还是学习中,借鉴其他App的UI界面技术方案,对自身都是一个参考和启发.网上关于Reveal这款软件的基本使用已经介绍的差不多了,但基本都类似,常见的方式是将Reveal的动态库或者静态库添加到工程项目中,或者使用命令(别名)的方式来实现动态的加载Reveal库,这个是最常推荐的方式,最小化侵入项目工程.但这些方法对于新手来说,使用起来还是有一点点小门槛.本文介绍的方法,是另一种思路,">
+<meta property="og:image" content="http://m1.yea.im/Qn.png">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/46f12941gw1ett4bnrycmj21kw0xtqbq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/46f12941gw1ett4liew6hj20hs0vkq55.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/46f12941gw1ett4ojsmbwj20hs0vkgoj.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/46f12941gw1ett4xtmgxaj21kw0yewq8.jpg">
+<meta property="og:updated_time" content="2015-07-08T02:13:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="求知若渴 大智若愚">
-<meta name="twitter:description" content="title: 使用Hexo在github上搭建自己的静态Blog  —(Mac篇)
-尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:
-
-本地搭建">
+<meta name="twitter:title" content="小白都能上手用Reveal查看第三方App">
+<meta name="twitter:description" content="无论是在项目还是学习中,借鉴其他App的UI界面技术方案,对自身都是一个参考和启发.网上关于Reveal这款软件的基本使用已经介绍的差不多了,但基本都类似,常见的方式是将Reveal的动态库或者静态库添加到工程项目中,或者使用命令(别名)的方式来实现动态的加载Reveal库,这个是最常推荐的方式,最小化侵入项目工程.但这些方法对于新手来说,使用起来还是有一点点小门槛.本文介绍的方法,是另一种思路,">
   
     <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
   
@@ -40,7 +36,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://ww1.sinaimg.cn/large/46f12941gw1etujjkff90j218o0pqgnr.jpg" class="js-avatar">
+			<img lazy-src="http://ww4.sinaimg.cn/large/46f12941gw1etv56pm7evj20sg0lct9i.jpg" class="js-avatar">
 			
 		</a>
 
@@ -124,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/主题/" style="font-size: 20px;">主题</a>
 					</div>
 				</section>
 				
@@ -170,7 +166,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img lazy-src="http://ww1.sinaimg.cn/large/46f12941gw1etujjkff90j218o0pqgnr.jpg" class="js-avatar">
+				<img lazy-src="http://ww4.sinaimg.cn/large/46f12941gw1etv56pm7evj20sg0lct9i.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">Alexcai</h1>
@@ -204,11 +200,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Mac下使用hexo搭建blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-小白都能上手用Reveal查看第三方App" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/07/Mac下使用hexo搭建blog/" class="article-date">
-  	<time datetime="2015-07-07T13:29:08.000Z" itemprop="datePublished">2015-07-07</time>
+      <a href="/2015/07/08/小白都能上手用Reveal查看第三方App/" class="article-date">
+  	<time datetime="2015-07-08T02:13:57.000Z" itemprop="datePublished">2015-07-08</time>
 </a>
     </div>
   
@@ -217,102 +213,71 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      小白都能上手用Reveal查看第三方App
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="title:_使用Hexo在github上搭建自己的静态Blog_—(Mac篇)">title: 使用Hexo在github上搭建自己的静态Blog  —(Mac篇)</h2><blockquote>
-<p>尽管网上已经有很多教程,但真正动手实践起来,还是比较折腾人的.多多少少都会遇到一些坑.这里做些记录,算是边做边学吧.具体步骤如下:</p>
+        <blockquote>
+<p>无论是在项目还是学习中,借鉴其他App的UI界面技术方案,对自身都是一个参考和启发.网上关于Reveal这款软件的基本使用已经介绍的差不多了,但基本都类似,常见的方式是将Reveal的动态库或者静态库添加到工程项目中,或者使用命令(别名)的方式来实现动态的加载Reveal库,这个是最常推荐的方式,最小化侵入项目工程.但这些方法对于新手来说,使用起来还是有一点点小门槛.本文介绍的方法,是另一种思路,让Reveal使用起来更加简洁,快速,有效.</p>
 </blockquote>
-<h2 id="本地搭建">本地搭建</h2><a id="more"></a>
 <ul>
-<li><p>环境准备</p>
-<ol>
-<li><p>git环境就不说了,基本上只要安装了Xcode并且带了命令行工具,终端里就可以git了.</p>
-</li>
-<li><p>安装nvm:推荐使用这个来安装node.js,尽管网上不少教程都说可以直接去nodejs官网<a href="http://nodejs.org" target="_blank" rel="external">http://nodejs.org</a>下载pkg安装包,个人实践不太靠谱,而且还有被墙的风险,问题较多.  </p>
-<p>在终端中输入命令   </p>
-<p><code>curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh</code></p>
-</li>
-<li><p>重启终端即可.</p>
-</li>
-</ol>
-</li>
-<li><p>安装node.js</p>
-<ul>
-<li>1.终端输入命令:</li>
+<li>工欲善其事…</li>
 </ul>
-<p>​         <code>nvm install 0.10</code></p>
-<p>​       这个过程要稍微久一点,网络不好的话,要耐心点,之后就可以安装hexo.</p>
-<p>​</p>
-<p>​</p>
-</li>
-<li><p>安装hexo(这个是重点)</p>
-<ul>
-<li><p>终端输入命令:</p>
-<p><code>npm install -g hexo</code></p>
-<p>​</p>
-</li>
-</ul>
-</li>
-<li><p>初始化blog文件夹</p>
-<ul>
-<li>终端下输入命令:</li>
-</ul>
-<p>​     <code>mkdir hexoBLOG</code></p>
-<p>​     <code>cd hexoBlog</code></p>
-<p>​     <code>hexo init</code></p>
-<p>​</p>
-<ul>
-<li><p>如果hexo版本是2.6以后的,还需要执行下面命令:</p>
-<p><code>npm install hexo-renderer-ejs --save</code> </p>
-<p><code>npm install hexo-renderer-stylus --save</code> </p>
-<p><code>npm install hexo-renderer-marked --save</code></p>
-<p>​</p>
-</li>
-</ul>
-</li>
-<li><p>新建博文</p>
-<p><code>hexo new 博文名字</code>(注意,博文名字后面不需要添加.md后缀)</p>
-<ul>
-<li>这条命令会在当前目录下的source/_posts/生成一个.md后缀的文件</li>
-<li>使用markdown软件编辑博文后保存.</li>
-</ul>
-</li>
-<li><p>生成html</p>
-<p><code>hexo generate</code></p>
-</li>
-<li><p>本地预览</p>
-<p><code>hexo server</code></p>
-</li>
-</ul>
-<h2 id="发布到github-io">发布到github.io</h2><ol>
-<li><p>注册github账号.</p>
-</li>
-<li><p>创建仓库,名字必须为自己的登录名格式为:登录名.github.io</p>
-</li>
-<li><p>记录好仓库的https地址</p>
-</li>
-<li><p>在终端里输入发布命令</p>
-<p><code>hexo deploy</code></p>
 <blockquote>
-<p>如果hexo为2.6之后的版本,需要修改_config.yml文件</p>
+<p>准备工具:</p>
+<ul>
+<li><a href="http://revealapp.com" target="_blank" rel="external">Reveal软件</a></li>
+<li><a href="https://github.com/shjborage/Reveal-Plugin-for-Xcode" target="_blank" rel="external">Xcode-Reveal插件:</a></li>
+</ul>
+<p>如果是手机越狱用户,可以在Cydia商店中再下载一款插件:Reveal Loader</p>
 </blockquote>
-</li>
-</ol>
-<blockquote>
-<p>在文件中找到deploy部分,修改type的值为git(注意:type和git之间要保留一个空格)</p>
-<p>参考样例:</p>
-<p>deploy:</p>
-<p>​    type: git</p>
-<p>   repository: <a href="https://github.com/leiocai/leiocai.github.io.git" target="_blank" rel="external">https://github.com/leiocai/leiocai.github.io.git</a></p>
+<a id="more"></a>
+<h4 id="未越狱情况">未越狱情况</h4><p>对于手机未越狱的用户,只能查看自己的项目工程,一种比较实际的应用场景是,项目中难免手工使用代码写了很多UI界面,每次查看效果都需要编译工程,然后根据情况再修改代码,再编译工程查看,这个过程是比较枯燥的,我们可以借助Reveal这个软件来直接查看工程的UI界面,并在辅助属性里设置我们需要的值以及实时查看效果,最后再回到代码中做一次性的修改.</p>
+<p><img src="http://m1.yea.im/Qn.png" alt=""></p>
+<h4 id="另一种可能">另一种可能</h4><blockquote>
+<p>其实在Xcode6版本开始,苹果已经内置了类似Reveal的功能,虽然还不是很强大,但随手用下,基本上也可以实现UI效果观察,而且,毕竟这是苹果自己的产品,后续还有很大的发挥空间..</p>
+</blockquote>
+<p><img src="http://ww2.sinaimg.cn/large/46f12941gw1ett4bnrycmj21kw0xtqbq.jpg" alt=""></p>
+<h4 id="越狱的任性">越狱的任性</h4><blockquote>
+<ul>
+<li>仅提醒越狱后要修改OpenSSH默认密码,保护手机安全.</li>
+</ul>
 </blockquote>
 <ol>
-<li>如需修改主题,可以到hexo官网下载喜欢的主题后,修改_config.yml中的Theme即可.</li>
+<li><p>安装Reveal Loader插件后,会在系统<code>设置</code>中出现<code>Reveal</code>的选项</p>
+<p><img src="http://ww1.sinaimg.cn/large/46f12941gw1ett4liew6hj20hs0vkq55.jpg" alt=""></p>
+</li>
+<li><p>点击后,即可选择需要查看的App应用</p>
+<p><img src="http://ww4.sinaimg.cn/large/46f12941gw1ett4ojsmbwj20hs0vkgoj.jpg" alt=""></p>
+</li>
+<li><p>手机连接电脑后,先运行Reveal软件,再运行手机上需要观察的App,然后,你就可以任性了.</p>
+<p><img src="http://ww4.sinaimg.cn/large/46f12941gw1ett4xtmgxaj21kw0yewq8.jpg" alt=""></p>
+</li>
 </ol>
-<blockquote>
-<p>推荐到hexo的github主题仓库中下载喜欢的theme</p>
-<p><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+<h4 id="补充">补充</h4><blockquote>
+<p>使用Reveal学习其他App的UI技术是开发道路上的一个捷径,如果再深入研究,就开始设计iOS逆向工程了,不做继续讨论~~.</p>
+<p>Reveal Loader 插件原理是将动态库在App启动的时候链接到应用,具体步骤可以参考使用OpenSSH方式的内容.</p>
 </blockquote>
-<h2 id="临时语">临时语</h2><p>本人还在学习搭建的路上,文中不足难免,对于定制更细节的内容,还需要深入研究配置文件(_config.yml),这个还在摸索中….</p>
 
       
     </div>
@@ -322,20 +287,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/07/OC中的正则表达式初体验/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/08/iOS中使用模版引擎渲染HTML摸索/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          iOS中使用模版引擎渲染HTML摸索
         
       </div>
     </a>
   
-  
-    <a href="/2015/07/07/LeanCloud快速集成IM功能-边学边做/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -362,7 +322,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Mac下使用hexo搭建blog" data-title="" data-url="http://yoursite.com/2015/07/07/Mac下使用hexo搭建blog/"></div>
+	<div class="ds-thread" data-thread-key="小白都能上手用Reveal查看第三方App" data-title="小白都能上手用Reveal查看第三方App" data-url="http://yoursite.com/2015/07/08/小白都能上手用Reveal查看第三方App/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

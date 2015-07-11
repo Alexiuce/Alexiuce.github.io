@@ -3,27 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>OC中的正则表达式初体验 | 求知若渴 大智若愚</title>
+  <title>iOS推送之LeanCloud订阅-发布模式 | 求知若渴 大智若愚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.">
+  <meta name="description" content="闲话少叙,直接上步骤:
+1.获取LeanCloud应用信息: AppID和AppKey
+2.获取用户的应用通知权限
+3.获取deviceToken并提交给LeanCloud服务器.
+4.订阅频道
+5.创建AVPush对象发布消息到指定的频道
+6.接受推送到的消息
+7.退出频道">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OC中的正则表达式初体验">
-<meta property="og:url" content="http://yoursite.com/2015/07/08/OC中的正则表达式初体验/index.html">
+<meta property="og:title" content="iOS推送之LeanCloud订阅-发布模式">
+<meta property="og:url" content="http://yoursite.com/2015/07/11/iOS推送分享/index.html">
 <meta property="og:site_name" content="求知若渴 大智若愚">
-<meta property="og:description" content="正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.">
-<meta property="og:updated_time" content="2015-07-08T02:43:38.000Z">
+<meta property="og:description" content="闲话少叙,直接上步骤:
+1.获取LeanCloud应用信息: AppID和AppKey
+2.获取用户的应用通知权限
+3.获取deviceToken并提交给LeanCloud服务器.
+4.订阅频道
+5.创建AVPush对象发布消息到指定的频道
+6.接受推送到的消息
+7.退出频道">
+<meta property="og:updated_time" content="2015-07-11T11:29:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OC中的正则表达式初体验">
-<meta name="twitter:description" content="正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.
-正则表达式在OC中可以使用一个叫做NSRegularExpression的类来处理.
-本文初步记录了自己在使用过程中的一点体会.
-记录点滴,供以后查阅之用.">
+<meta name="twitter:title" content="iOS推送之LeanCloud订阅-发布模式">
+<meta name="twitter:description" content="闲话少叙,直接上步骤:
+1.获取LeanCloud应用信息: AppID和AppKey
+2.获取用户的应用通知权限
+3.获取deviceToken并提交给LeanCloud服务器.
+4.订阅频道
+5.创建AVPush对象发布消息到指定的频道
+6.接受推送到的消息
+7.退出频道">
   
     <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
   
@@ -204,11 +216,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-OC中的正则表达式初体验" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-iOS推送分享" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/08/OC中的正则表达式初体验/" class="article-date">
-  	<time datetime="2015-07-08T02:43:38.000Z" itemprop="datePublished">2015-07-08</time>
+      <a href="/2015/07/11/iOS推送分享/" class="article-date">
+  	<time datetime="2015-07-11T11:29:05.000Z" itemprop="datePublished">2015-07-11</time>
 </a>
     </div>
   
@@ -221,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      OC中的正则表达式初体验
+      iOS推送之LeanCloud订阅-发布模式
     </h1>
   
 
@@ -242,56 +254,72 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
-<p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
-<p>本文初步记录了自己在使用过程中的一点体会.</p>
-<p>记录点滴,供以后查阅之用.</p>
+<p>闲话少叙,直接上步骤:</p>
+<p>1.获取LeanCloud应用信息: AppID和AppKey</p>
+<p>2.获取用户的应用通知权限</p>
+<p>3.获取deviceToken并提交给LeanCloud服务器.</p>
+<p>4.订阅频道</p>
+<p>5.创建AVPush对象发布消息到指定的频道</p>
+<p>6.接受推送到的消息</p>
+<p>7.退出频道</p>
 </blockquote>
-<a id="more"></a>
-<h5 id="从一个验证邮箱是否合法的需求说起">从一个验证邮箱是否合法的需求说起</h5><blockquote>
-<p>产品设计中,需要用户使用邮箱作为账号来进行登陆,在进行网络验证前,应在本地进行合理的邮箱合法性处理.因此在获取用户输入的信息之后……</p>
-</blockquote>
-<ul>
-<li><p>验证用户输入的邮箱是否合法</p>
-<p>定义(正则表达式)规则</p>
-<p>创建表达式对象</p>
-<p>使用正则对象进行验证</p>
-</li>
+ <a id="more"></a>
+<h2 id="1-_获取LeanCloud应用信息">1. 获取LeanCloud应用信息</h2><ul>
+<li>到LeanCloud官网注册开发者—&gt;创建应用—&gt; 获取应用的AppID和AppKey</li>
 </ul>
 <blockquote>
-<p>总体来说,只需要处理好上面的三个环节,就可以完成任务了.下面说下具我在代码中的具体实现</p>
+<p>本过程请认真参考LeanCloud官方文档进行操作.</p>
 </blockquote>
-<h5 id="代码走起">代码走起</h5><p>生成定义的规则</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;</span><br></pre></td></tr></table></figure>
-<p>创建表达式对象</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];</span><br></pre></td></tr></table></figure>
-<p>使用表达式对象进行验证</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *result = [regular matchesInString:@&#34;&#35201;&#39564;&#35777;&#30340;&#23383;&#31526;&#20018;&#34; options:0 range:NSMakeRange(0, self.length)];</span><br></pre></td></tr></table></figure>
-<h5 id="最终方案">最终方案</h5><blockquote>
-<p>因为可能会经常用到类似的功能,比如验证密码强度,手机号码,QQ号码等,最终采用字符串分类来实现拓展</p>
-<ul>
-<li>NSString+ZDRegular.h</li>
-<li>NSString+ZDRegular.m</li>
+<h2 id="2-_获取应用通知权限">2. 获取应用通知权限</h2><ul>
+<li>iOS 8以前的版本</li>
 </ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application&#10;didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;&#10;    ...&#10;    // Register for push notifications&#10;    [application registerForRemoteNotificationTypes:&#10;                                UIRemoteNotificationTypeBadge |&#10;                                UIRemoteNotificationTypeAlert |&#10;                                UIRemoteNotificationTypeSound];&#10;    ...&#10;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>iOS8以后的版本</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application&#10;didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;&#10;    ...&#10;    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert&#10;                                            | UIUserNotificationTypeBadge&#10;                                            | UIUserNotificationTypeSound&#10;                                                                             categories:nil];&#10;    [application registerUserNotificationSettings:settings];&#10;    [application registerForRemoteNotifications];&#10;    ...&#10;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>建议:</strong> 关于系统版本的选择,可以考虑使用条件编译.</p>
 </blockquote>
-<p><strong>NSString+ZDRegular.h</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  NSString+ZDRegular.h&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;#import &#60;Foundation/Foundation.h&#62;&#10;&#10;@interface NSString (ZDRegular)&#10;/**&#10; *  &#21028;&#26029;&#26159;&#21542;&#21512;&#27861;&#37038;&#20214;&#22320;&#22336;&#10; */&#10;- (BOOL)isEmail;&#10;@end</span><br></pre></td></tr></table></figure>
-<p><strong>NSString+ZDRegular.m</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;//  NSString+ZDRegular.m&#10;//  ZDKonw&#10;//&#10;//  Created by Alexcai on 15/7/4.&#10;//  Copyright (c) 2015&#24180; zhidier. All rights reserved.&#10;//&#10;&#10;#import &#34;NSString+ZDRegular.h&#34;&#10;&#10;@implementation NSString (ZDRegular)&#10;&#10;- (BOOL)isEmail&#123;&#10;    NSString *pattern = @&#34;\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*&#34;;&#10;    return [self matchesWithPattern:pattern];&#10;&#125;&#10;&#10;// &#27491;&#21017;&#21305;&#37197;&#26041;&#27861;&#10;- (BOOL)matchesWithPattern:(NSString *)pattern&#123;&#10;    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];&#10;    NSArray *result = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];&#10;    return result.count &#62; 0;&#10;&#125;&#10;&#10;&#10;@end</span><br></pre></td></tr></table></figure>
-<h5 id="补充">补充</h5><blockquote>
-<p>关于正则表达式的常用元字符的使用说明</p>
-<p><code>^</code>:匹配字符串开头</p>
-<p><code>$</code>:匹配字符串结尾</p>
-<p><code>\d</code>:匹配一位数字</p>
-<p><code>.</code>:匹配换行之外的任意字符</p>
-<p><code>*</code>:匹配0个或多个</p>
-<p><code>?</code>:匹配0个或1个</p>
-<p><code>+</code>:匹配至少1个或多个</p>
-<p><code>\w</code>:匹配任意字母或数字</p>
+<h2 id="3-_获取deviceToken并保存到服务器">3. 获取deviceToken并保存到服务器</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken &#123;&#10;    AVInstallation *currentInstallation = [AVInstallation currentInstallation];&#10;     // &#35774;&#32622;deviceToken&#10;    [currentInstallation setDeviceTokenFromData:deviceToken];&#10;     // &#20445;&#23384;&#21040;LeanCloud&#26381;&#21153;&#22120;&#10;    [currentInstallation saveInBackground];&#10;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果第2步获取用户授权成功,系统会自动调用本方法,并传递APNs服务返回的deviceToken</p>
+<p>我们通过创建AVInstallation对象,并调用setDeviceTokenFromData:方法来设置获得到的deviceToken</p>
+<p>并需要保存deviceToken (saveInBackground方法).</p>
 </blockquote>
-<p><em>根据上面的正则表达式简单规则,我们可以在分类文件中继续写出一个验证手机号码合法性的方法</em></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#39564;&#35777;&#25163;&#26426;&#21495;&#30721;&#26159;&#21542;&#21512;&#27861;&#10;- (BOOL)isMobilePhone&#123;&#10;  NSString *pattern = @&#34;^1[3-9]\\d&#123;9&#125;$&#34;;&#10;  return [self matchesWithPattern:pattern];&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="说明">说明</h5><p><em>本人尚在学习中,文中难免有误,欢迎大家指正</em></p>
+<h2 id="4-订阅频道">4.订阅频道</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AVInstallation *currentInstallation = [AVInstallation currentInstallation];&#10;// &#35746;&#38405;&#34;Giants&#34;&#39057;&#36947;&#10;[currentInstallation removeObject:@&#34;Giants&#34; forKey:@&#34;channels&#34;];&#10;// &#20445;&#23384;&#35746;&#38405;&#10;[currentInstallation saveInBackground];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>订阅某个频道后,发送消息的时候指定要发送的频道即可.</p>
+<p>频道类似将用户分成组别,订阅频道就相当于用户加入到消息组中,向频道发送消息后,该频道的用户都可以收到消息.</p>
+</blockquote>
+<h2 id="5-发送消息到频道">5.发送消息到频道</h2><blockquote>
+<p>因默认情况,LeanCloud认为从客户端发起的推送都使用发布证书,测试中我们需要使用测试证书,必须调用下面的方法进行设置</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// NO: &#20351;&#29992;&#27979;&#35797;&#35777;&#20070;&#10;// &#40664;&#35748;&#20540;&#20026;YES: &#20351;&#29992;&#21457;&#24067;&#35777;&#20070;&#10;[AVPush setProductionMode:NO];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>发送消息到频道</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#21019;&#24314;&#21457;&#24067;&#28040;&#24687;&#23545;&#35937;&#10;AVPush *push = [[AVPush alloc] init];&#10;// &#35774;&#32622;&#21457;&#24067;&#39057;&#36947;&#10;[push setChannel:@&#34;Giants&#34;];&#10;// &#35774;&#32622;&#28040;&#24687;&#10;[push setMessage:@&#34;The Giants just scored!&#34;];&#10;// &#21457;&#36865;&#28040;&#24687;&#10;[push sendPushInBackground];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>订阅了频道的设备才能收到消息.</em></p>
+</blockquote>
+<h2 id="6-接收推送到的消息">6.接收推送到的消息</h2><ul>
+<li>应用在前台运行中,收到消息后,系统会自动调用下面方法</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</span><br></pre></td></tr></table></figure>
+<ul>
+<li>应用在后台或者应用未启动,点击通知后,相当于直接点击应用图标操作,系统调用下面的方法</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">application:didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>点击图标启动和点击通知消息启动的区别:</strong></p>
+<p>点击图标启动应用时,参数launchOptions的值为nil</p>
+<p>点击通知消息启动应用时,参数launchOptions的值就是消息数据体</p>
+</blockquote>
+<h2 id="7-退订消息">7.退订消息</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AVInstallation *currentInstallation = [AVInstallation currentInstallation];&#10;[currentInstallation removeObject:@&#34;Giants&#34; forKey:@&#34;channels&#34;];&#10;[currentInstallation saveInBackground];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>退订后,设备将不再接受该频道的推送消息</p>
+</blockquote>
 
       
     </div>
@@ -301,18 +329,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/11/iOS推送分享/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          iOS推送之LeanCloud订阅-发布模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/08/LeanCloud快速集成IM功能-边学边做/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeanCloud快速集成IM功能-边学边做</div>
+    <a href="/2015/07/08/OC中的正则表达式初体验/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OC中的正则表达式初体验</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -341,7 +360,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="OC中的正则表达式初体验" data-title="OC中的正则表达式初体验" data-url="http://yoursite.com/2015/07/08/OC中的正则表达式初体验/"></div>
+	<div class="ds-thread" data-thread-key="iOS推送分享" data-title="iOS推送之LeanCloud订阅-发布模式" data-url="http://yoursite.com/2015/07/11/iOS推送分享/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

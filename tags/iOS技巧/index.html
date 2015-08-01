@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Git加速小技巧 | 求知若渴 大智若愚</title>
+  <title>Tag: iOS技巧 | 求知若渴 大智若愚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近使用GitHub的时候,经常感觉速度越来越慢,刚刚看到网上的一个技术头条,试着用下,效果还真不错,一下子腰也不疼了…..">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git加速小技巧">
-<meta property="og:url" content="http://yoursite.com/2015/07/30/Git加速小技巧/index.html">
+  <meta name="description" content="热爱iOS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="求知若渴 大智若愚">
+<meta property="og:url" content="http://yoursite.com/tags/iOS技巧/index.html">
 <meta property="og:site_name" content="求知若渴 大智若愚">
-<meta property="og:description" content="最近使用GitHub的时候,经常感觉速度越来越慢,刚刚看到网上的一个技术头条,试着用下,效果还真不错,一下子腰也不疼了…..">
-<meta property="og:updated_time" content="2015-07-30T06:23:15.000Z">
+<meta property="og:description" content="热爱iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git加速小技巧">
-<meta name="twitter:description" content="最近使用GitHub的时候,经常感觉速度越来越慢,刚刚看到网上的一个技术头条,试着用下,效果还真不错,一下子腰也不疼了…..">
+<meta name="twitter:title" content="求知若渴 大智若愚">
+<meta name="twitter:description" content="热爱iOS">
   
     <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
   
@@ -195,134 +194,53 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Git加速小技巧" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2015/07/30/Git加速小技巧/" class="article-date">
-  	<time datetime="2015-07-30T06:06:20.000Z" itemprop="datePublished">2015-07-30</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/07/31/iOS开发小知识/" class="archive-article-date">
+  	<time datetime="2015-07-31T11:28:21.000Z" itemprop="datePublished">Jul 31</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Git加速小技巧
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/31/iOS开发小知识/">iOS开发小知识</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git相关/">Git相关</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS技巧/">iOS技巧</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
 	</div>
 
-        
+          
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p> 最近使用GitHub的时候,经常感觉速度越来越慢,刚刚看到网上的一个技术头条,试着用下,效果还真不错,一下子腰也不疼了…..<br><a id="more"></a></p>
-<h2 id="Git_加速步骤">Git 加速步骤</h2></blockquote>
-<p> 一. 打开终端后输入下面命令:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
-<ul>
-<li>默认情况下config这个文件是没有的,如果没有,命令会建立config文件,如果文件存在,则打开文件.</li>
-<li>以.开头的 文件或文件夹表示隐藏,需要使用ls -a命令才能查看到.</li>
-</ul>
-<p>二. 编辑文件内容</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ControlMaster auto&#10;ControlPath /tmp/git@github.com:22&#10;ControlPersist yes</span><br></pre></td></tr></table></figure>
-<ul>
-<li><em>ControlPath /tmp/%r@%h:%p:</em> %r代表远程登录用户名，一般都为git，%h表示目标主机，%p表示端口。</li>
-<li><em>ControlPersist yes</em>: 持久保持链接,意思就像打电话,即便双方不说话,但也不要挂断.</li>
-<li><em>ControlMaster auto</em>: 共享一个已经存在的连接，如果没有，则自动创建一个连接。</li>
-</ul>
-<p>三. 保存退出vim编辑器</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Esc &#10;:wq</span><br></pre></td></tr></table></figure>
-<p>四. 开始Git吧</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone xxxxxx.git</span><br></pre></td></tr></table></figure>
-<h2 id="小记">小记</h2><blockquote>
-<p>本人使用之前,Git下载基本保持在10K以内,配置之后,基本可以达到50K,效果还是非常明显的.</p>
-</blockquote>
-
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/07/31/iOS开发小知识/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          iOS开发小知识
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/07/15/关于UILabel计算文字内容行数的简单实现/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于UILabel计算文字内容行数的简单实现</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Git加速小技巧" data-title="Git加速小技巧" data-url="http://yoursite.com/2015/07/30/Git加速小技巧/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -348,9 +266,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}

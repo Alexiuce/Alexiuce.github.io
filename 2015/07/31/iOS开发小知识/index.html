@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS开发小知识 | 求知若渴 大智若愚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 去除特定类型的警告信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS开发小知识">
+<meta property="og:url" content="http://yoursite.com/2015/07/31/iOS开发小知识/index.html">
+<meta property="og:site_name" content="求知若渴 大智若愚">
+<meta property="og:description" content="1. 去除特定类型的警告信息">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/46f12941gw1eum7wp08iij20h80acjst.jpg">
+<meta property="og:image" content="http://www.cocoachina.com/cms/uploads/allimg/131104/4196_131104103523_1.jpg">
+<meta property="og:updated_time" content="2015-08-01T02:30:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS开发小知识">
+<meta name="twitter:description" content="1. 去除特定类型的警告信息">
+  
+    <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://ww4.sinaimg.cn/large/46f12941gw1etv5n2xxa3j21hc0u0gos.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Alexcai</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">老菜居士</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/leiocai" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/1190209857?from=hissimilar_home" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Git相关/" style="font-size: 10px;">Git相关</a> <a href="/tags/Objective-C/" style="font-size: 16.67px;">Objective-C</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS技巧/" style="font-size: 10px;">iOS技巧</a> <a href="/tags/主题/" style="font-size: 20px;">主题</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">进步,就是每天遇到更好的自己!</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Alexcai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://ww4.sinaimg.cn/large/46f12941gw1etv5n2xxa3j21hc0u0gos.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Alexcai</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">老菜居士</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/leiocai" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1190209857?from=hissimilar_home" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-iOS开发小知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/31/iOS开发小知识/" class="article-date">
+  	<time datetime="2015-07-31T11:28:21.000Z" itemprop="datePublished">2015-07-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS开发小知识
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS技巧/">iOS技巧</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="1-_去除特定类型的警告信息">1. 去除特定类型的警告信息</h6><a id="more"></a>
+<ul>
+<li>先查看警告类型</li>
+</ul>
+<blockquote>
+<p>当工程中有这种类型警告的时候,在警告窗口,某个警告上,我们右击,显示出右键菜单,选择其中的 Reveal in Log,</p>
+<p><img src="http://ww4.sinaimg.cn/large/46f12941gw1eum7wp08iij20h80acjst.jpg" alt=""></p>
+</blockquote>
+<ul>
+<li>其中 [-Wxxxxxxxxxx-xxxx-xxx],在这个括号中的就是 这种警告的类型   -W是前缀,这个前缀表示的是 打开这种类型的警告 如果我们是要关闭某种类型的警告的话, 要将 -W换成 -Wno-</li>
+<li>编译器提供的宏来操作</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma  clang diagnostic ignored &#34;-Wmultichar&#34;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>整个工程去除某种警告信息:工程的target有一个 Other Warning Flags,在其中添加 -Wno-xxxxx-xx-xx-xx后,再重新编译即可.</p>
+</blockquote>
+<h6 id="2-_UITableview去除空白表格">2. UITableview去除空白表格</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.tableView.tableFooterView = [UIView new];</span><br></pre></td></tr></table></figure>
+<h6 id="3-屏幕快照">3.屏幕快照</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (UIImage *)getScreenShot &#123; &#10;    UIGraphicsBeginImageContext(self.view.bounds.size); &#10;    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()]; &#10;    UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); &#10;    UIGraphicsEndImageContext(); &#10;    return image; &#10;&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="4-设置系统状态栏">4.设置系统状态栏</h6><ul>
+<li>可以在每个viewController中重写下面的方法</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(UIStatusBarStyle)preferredStatusBarStyle &#10;&#123; &#10;    return UIStatusBarStyleLightContent; &#10;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>也可以使用UIApplication的statusBarStyle方法来设置状态栏，不过，首先需要停止使用View controller-based status bar appearance。在project target的Info tab中，插入一个新的key，名字为View controller-based status bar appearance，并将其值设置为NO。</p>
+<p><img src="http://www.cocoachina.com/cms/uploads/allimg/131104/4196_131104103523_1.jpg" alt=""></p>
+</li>
+</ul>
+<h6 id="5-设置导航栏背景颜色">5.设置导航栏背景颜色</h6><blockquote>
+<p>在iOS 7之后，不再使用tintColor属性(这个属性可以用来设置UIBarButtonItem的颜色)来设置导航栏的颜色，而是使用barTintColor属性来修改背景色。</p>
+</blockquote>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>默认情况下，导航栏的translucent属性为YES。另外，系统还会对所有的导航栏做模糊处理，这样可以让iOS 7中导航栏的颜色更加饱和。</p>
+</blockquote>
+<h6 id="6-使用16进制颜色">6.使用16进制颜色</h6><blockquote>
+<p>在开发中,UI设计师经常给开发的颜色值往往都是用十六进制表示的,比如0xffaabb,这就需要我们进行转换后使用.</p>
+</blockquote>
+<ul>
+<li><p>方案一: 使用下面的宏定义</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define UIColorWithRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue &#38; 0xFF0000) &#62;&#62; 16))/255.0 green:((float)((rgbValue &#38; 0xFF00) &#62;&#62; 8))/255.0 blue:((float)(rgbValue &#38; 0xFF))/255.0 alpha:1.0]&#10;// &#20351;&#29992;&#31034;&#20363;&#10;UIColor *color = UIColorWithRGB(0x23A5D3);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>方案二: 使用下面分类方法</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">+ (UIColor *)<span class="string">colorWithHex:</span>(NSString *)string&#123;</span><br><span class="line">    &#123;</span><br><span class="line">        NSString *cleanString = [string <span class="string">stringByReplacingOccurrencesOfString:</span>@<span class="string">"#"</span> <span class="string">withString:</span>@<span class="string">""</span>];</span><br><span class="line">        <span class="keyword">if</span>([cleanString length] == <span class="number">3</span>) &#123;</span><br><span class="line">            cleanString = [NSString <span class="string">stringWithFormat:</span>@<span class="string">"%@%@%@%@%@%@"</span>,</span><br><span class="line">                           [cleanString <span class="string">substringWithRange:</span>NSMakeRange(<span class="number">0</span>, <span class="number">1</span>)],[cleanString <span class="string">substringWithRange:</span>NSMakeRange(<span class="number">0</span>, <span class="number">1</span>)],</span><br><span class="line">                           [cleanString <span class="string">substringWithRange:</span>NSMakeRange(<span class="number">1</span>, <span class="number">1</span>)],[cleanString <span class="string">substringWithRange:</span>NSMakeRange(<span class="number">1</span>, <span class="number">1</span>)],</span><br><span class="line">                           [cleanString <span class="string">substringWithRange:</span>NSMakeRange(<span class="number">2</span>, <span class="number">1</span>)],[cleanString <span class="string">substringWithRange:</span>NSMakeRange(<span class="number">2</span>, <span class="number">1</span>)]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>([cleanString length] == <span class="number">6</span>) &#123;</span><br><span class="line">            cleanString = [cleanString <span class="string">stringByAppendingString:</span>@<span class="string">"ff"</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        unsigned <span class="typename">int</span> baseValue;</span><br><span class="line">        [[NSScanner <span class="string">scannerWithString:</span>cleanString] <span class="string">scanHexInt:</span>&amp;baseValue];</span><br><span class="line"></span><br><span class="line">        <span class="typename">float</span> red = ((baseValue &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xFF</span>)/<span class="number">255.0</span>f;</span><br><span class="line">        <span class="typename">float</span> green = ((baseValue &gt;&gt; <span class="number">16</span>) &amp; <span class="number">0xFF</span>)/<span class="number">255.0</span>f;</span><br><span class="line">        <span class="typename">float</span> blue = ((baseValue &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0xFF</span>)/<span class="number">255.0</span>f;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> [UIColor <span class="string">colorWithRed:</span>red <span class="string">green:</span>green <span class="string">blue:</span>blue <span class="string">alpha:</span><span class="number">1.0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line">UIColor *myColor = [UIColor <span class="string">colorWithHex:</span>@<span class="string">"#1c3b2a"</span>];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  ​</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/30/Git加速小技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git加速小技巧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="iOS开发小知识" data-title="iOS开发小知识" data-url="http://yoursite.com/2015/07/31/iOS开发小知识/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Alexcai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

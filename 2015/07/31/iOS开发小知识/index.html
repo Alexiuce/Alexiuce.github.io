@@ -13,7 +13,8 @@
 <meta property="og:description" content="1. 去除特定类型的警告信息">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/46f12941gw1eum7wp08iij20h80acjst.jpg">
 <meta property="og:image" content="http://www.cocoachina.com/cms/uploads/allimg/131104/4196_131104103523_1.jpg">
-<meta property="og:updated_time" content="2015-08-01T10:04:34.000Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/46f12941gw1euo57ndpy2j20ow04mabi.jpg">
+<meta property="og:updated_time" content="2015-08-02T06:09:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发小知识">
 <meta name="twitter:description" content="1. 去除特定类型的警告信息">
@@ -282,13 +283,28 @@
 <h6 id="7-转换参照坐标系">7.转换参照坐标系</h6><blockquote>
 <p>一个UI控件的frame值,默认总是参照它的superView为坐标原点,但有时候我们需要获得到这个控件相对屏幕的坐标时,就需要进行坐标转换.</p>
 </blockquote>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#23558;&#25353;&#38062;btn&#30340;frame&#20540;&#20174;&#29238;&#25511;&#20214;&#30340;&#24038;&#19978;&#35282;&#36716;&#25442;&#20026;window&#30340;&#24038;&#19978;&#35282;&#20026;&#21407;&#28857;&#36827;&#34892;&#35745;&#31639;,&#33719;&#24471;&#26032;&#30340;frame&#20540;&#10;// toView&#30340;&#21442;&#25968;&#22914;&#26524;&#20256;nil,&#21017;&#20195;&#34920;&#24212;&#29992;&#30340;&#20027;&#31383;&#21475;.&#10;CGRect newFrame = [self.btn.superView convertRect:self.btn.frame toView:self.window];&#10;// convertRect:fromView  &#21516;&#19978;&#21462;&#21453;&#21363;&#21487;:&#10;CGRect newFrame1 = [self.window convertRect:self.btn.frame fromView:self.btn.superView];&#10;// convertPoint:toView  &#21516;&#29702;&#10;// convertPoint:fromView  &#21516;&#29702;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#23558;&#25353;&#38062;btn&#30340;frame&#20540;&#20174;&#29238;&#25511;&#20214;&#30340;&#24038;&#19978;&#35282;&#36716;&#25442;&#20026;window&#30340;&#24038;&#19978;&#35282;&#20026;&#21407;&#28857;&#36827;&#34892;&#35745;&#31639;,&#33719;&#24471;&#26032;&#30340;frame&#20540;&#10;// toView&#30340;&#21442;&#25968;&#22914;&#26524;&#20256;nil,&#21017;&#20195;&#34920;&#24212;&#29992;&#30340;&#20027;&#31383;&#21475;.&#10;CGRect newFrame = [self.btn.superView convertRect:self.btn.frame toView:self.window];&#10;// convertRect:fromView  &#21516;&#19978;&#21462;&#21453;&#21363;&#21487;:&#10;CGRect newFrame1 = [self.window convertRect:self.btn.frame fromView:self.btn.superView];&#10;// convertPoint:toView  &#21516;&#29702;&#10;// convertPoint:fromView  &#21516;&#29702;</span><br></pre></td></tr></table></figure>
 <h6 id="8-修改系统控件的readOnly属性值">8.修改系统控件的readOnly属性值</h6><blockquote>
 <p>使用KVC进行修改私有属性或者使用@property声明的(readOnly)的属性;</p>
 <p>KVC中,keyPath可以层层寻找属性,key只能在当前的属性中查找.</p>
 </blockquote>
-<p>  ​</p>
-<p>  ​</p>
+<h6 id="9-打印输出字典和数组">9.打印输出字典和数组</h6><blockquote>
+<p>我们在开发中经常会将数组或者字典中的内容打印出来进行查看,但如果有中文,往往会显示下面的情况</p>
+<p><img src="http://ww4.sinaimg.cn/large/46f12941gw1euo57ndpy2j20ow04mabi.jpg" alt=""></p>
+<p>为了能够正常显示中文内容,只要下面的分类代码到项目中即可.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &#34;NSArray+ZDLog.h&#34;&#10;&#10;@implementation NSArray (Log)&#10;- (NSString *)descriptionWithLocale:(id)locale&#10;&#123;&#10;    NSMutableString *strM = [NSMutableString stringWithString:@&#34;(\n&#34;];&#10;    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) &#123;&#10;        [strM appendFormat:@&#34;\t%@,\n&#34;, obj];&#10;    &#125;];&#10;    [strM appendString:@&#34;)&#34;];&#10;    return strM;&#10;&#125;&#10;@end&#10;&#10;@implementation NSDictionary (Log)&#10;- (NSString *)descriptionWithLocale:(id)locale&#10;&#123;&#10;    NSMutableString *strM = [NSMutableString stringWithString:@&#34;&#123;\n&#34;];&#10;    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) &#123;&#10;        [strM appendFormat:@&#34;\t%@ = %@;\n&#34;, key, obj];&#10;    &#125;];&#10;    [strM appendString:@&#34;&#125;\n&#34;];&#10;    return strM;&#10;&#125;&#10;@end</span><br></pre></td></tr></table></figure>
+<h6 id="10-KVC使用技巧">10.KVC使用技巧</h6><blockquote>
+<p>假设一个数组中存储了许多商品,我们需要将商品的名称提取出来,保存到另外一个数组中使用.通常的做法时先遍历商品数组,然后再获取商品对象的名称后,存到另外一个可变数组中,但使用KVC会更加简介,仅要下面这样的一行代码即可.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *productNames = [productsArray velueForKeyPath:@&#34;name&#34;];</span><br></pre></td></tr></table></figure>
+<h6 id="11-scrollview限制滚动方向">11.scrollview限制滚动方向</h6><blockquote>
+<p>当需要限制scrollview的水平或垂直不能滚动时,只需将该方向的值设置为0即可</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.scrollView.ContentSize = CGSizeMake(&#27700;&#24179;&#28378;&#21160;&#36317;&#31163;&#20540;,&#22402;&#30452;&#28378;&#21160;&#36317;&#31163;&#20540;);</span><br></pre></td></tr></table></figure>
+<h6 id="12-_禁止点击UIPageControl">12. 禁止点击UIPageControl</h6><blockquote>
+<p>UIPageControl默认是可以点击每个小圆点的,如果需要取消点击反应,只要不设置宽或高的尺子即可,这样UIpageControl依然可以显示,但不能响应点击事件.</p>
+</blockquote>
 <p>  ​</p>
 <p>  ​</p>
 <p>  ​</p>

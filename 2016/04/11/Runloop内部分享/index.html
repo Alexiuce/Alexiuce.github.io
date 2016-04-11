@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>求知若渴 大智若愚</title>
+  <title>Runloop内部分享 | 求知若渴 大智若愚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="热爱iOS">
-<meta property="og:type" content="website">
-<meta property="og:title" content="求知若渴 大智若愚">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Let us runloop
+Runloop 简介
+runloop 就是 OSX/iOS 系统中的消息循环机制，类似Windows终端 Event loop （事件循环）。在OSX和iOS中，系统提供了两个这样的对象：NSRunLoop 和 CFRunLoopRef。 CFRunLoopRef 是在 CoreFoundation 框架内的，它提供了纯 C 函数的 API，所有这些 API 都是线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Runloop内部分享">
+<meta property="og:url" content="http://yoursite.com/2016/04/11/Runloop内部分享/index.html">
 <meta property="og:site_name" content="求知若渴 大智若愚">
-<meta property="og:description" content="热爱iOS">
+<meta property="og:description" content="Let us runloop
+Runloop 简介
+runloop 就是 OSX/iOS 系统中的消息循环机制，类似Windows终端 Event loop （事件循环）。在OSX和iOS中，系统提供了两个这样的对象：NSRunLoop 和 CFRunLoopRef。 CFRunLoopRef 是在 CoreFoundation 框架内的，它提供了纯 C 函数的 API，所有这些 API 都是线程">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/46f12941gw1f2ster7puej21380a6wg0.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/46f12941gw1f2stfjy7m9j206u056q32.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/46f12941gw1f2stfzgci8j20bl08t0uf.jpg">
+<meta property="og:updated_time" content="2016-04-11T08:06:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="求知若渴 大智若愚">
-<meta name="twitter:description" content="热爱iOS">
+<meta name="twitter:title" content="Runloop内部分享">
+<meta name="twitter:description" content="Let us runloop
+Runloop 简介
+runloop 就是 OSX/iOS 系统中的消息循环机制，类似Windows终端 Event loop （事件循环）。在OSX和iOS中，系统提供了两个这样的对象：NSRunLoop 和 CFRunLoopRef。 CFRunLoopRef 是在 CoreFoundation 框架内的，它提供了纯 C 函数的 API，所有这些 API 都是线程">
   
     <link rel="alternative" href="/atom.xml" title="求知若渴 大智若愚" type="application/atom+xml">
   
@@ -184,9 +194,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Runloop内部分享" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Runloop内部分享" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/04/11/Runloop内部分享/" class="article-date">
@@ -202,12 +210,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/11/Runloop内部分享/">Runloop内部分享</a>
+    <h1 class="article-title" itemprop="name">
+      Runloop内部分享
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -261,590 +276,62 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/15/使用KVO监听数组的小技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用KVO监听数组的小技巧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-使用KVO监听数组的小技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/15/使用KVO监听数组的小技巧/" class="article-date">
-  	<time datetime="2015-08-15T14:15:06.000Z" itemprop="datePublished">2015-08-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/15/使用KVO监听数组的小技巧/">使用KVO监听数组的小技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>应用场景: 通过观察一个数组的数据变化,来更新UI界面元素,比如这个需求在UITableview中就属于比较常见的.而默认的情况下,KVO是不支持观察数组的….</p>
-</blockquote>
-<ul>
-<li><p>要实现KVO观察数组内容的变化,需要进行下面三步:</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-      
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/15/使用KVO监听数组的小技巧/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Runloop内部分享" data-title="Runloop内部分享" data-url="http://yoursite.com/2016/04/11/Runloop内部分享/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-  
-    <article id="post-按钮倒计时分类" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/11/按钮倒计时分类/" class="article-date">
-  	<time datetime="2015-08-11T11:35:57.000Z" itemprop="datePublished">2015-08-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/11/按钮倒计时分类/">按钮倒计时分类</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="按钮分类实现倒计时效果">按钮分类实现倒计时效果</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS开发/">iOS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/11/按钮倒计时分类/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Block小常识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/03/Block小常识/" class="article-date">
-  	<time datetime="2015-08-03T09:35:54.000Z" itemprop="datePublished">2015-08-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/03/Block小常识/">Block小常识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>作为苹果推荐的一种数据回调方式和数据类型,Block经常在项目中使用,但又经常忘记它特有的写法,所以专门做个小笔记,备查.</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/03/Block小常识/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-iOS开发小知识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/31/iOS开发小知识/" class="article-date">
-  	<time datetime="2015-07-31T11:28:21.000Z" itemprop="datePublished">2015-07-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/31/iOS开发小知识/">iOS开发小知识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="1-_去除特定类型的警告信息">1. 去除特定类型的警告信息</h6>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS技巧/">iOS技巧</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/31/iOS开发小知识/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Git加速小技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/30/Git加速小技巧/" class="article-date">
-  	<time datetime="2015-07-30T06:06:20.000Z" itemprop="datePublished">2015-07-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/30/Git加速小技巧/">Git加速小技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p> 最近使用GitHub的时候,经常感觉速度越来越慢,刚刚看到网上的一个技术头条,试着用下,效果还真不错,一下子腰也不疼了…..<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git相关/">Git相关</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/30/Git加速小技巧/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-关于UILabel计算文字内容行数的简单实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/15/关于UILabel计算文字内容行数的简单实现/" class="article-date">
-  	<time datetime="2015-07-15T13:21:14.000Z" itemprop="datePublished">2015-07-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/15/关于UILabel计算文字内容行数的简单实现/">关于UILabel计算文字内容行数的简单实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>项目中遇到一个判断文字内容长度的需求,当以感觉有点麻烦,结果在吃饭的路上灵感闪现了一个办法,感觉回到电脑上实践,感觉有点靠谱,先记录下来,供日后备查之用.</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/15/关于UILabel计算文字内容行数的简单实现/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-iOS推送分享" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/11/iOS推送分享/" class="article-date">
-  	<time datetime="2015-07-11T11:29:05.000Z" itemprop="datePublished">2015-07-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/11/iOS推送分享/">iOS推送之LeanCloud订阅-发布模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>闲话少叙,直接上步骤:</p>
-<p>1.获取LeanCloud应用信息: AppID和AppKey</p>
-<p>2.获取用户的应用通知权限</p>
-<p>3.获取deviceToken并提交给LeanCloud服务器.</p>
-<p>4.订阅频道</p>
-<p>5.创建AVPush对象发布消息到指定的频道</p>
-<p>6.接受推送到的消息</p>
-<p>7.退出频道</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/11/iOS推送分享/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-OC中的正则表达式初体验" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/08/OC中的正则表达式初体验/" class="article-date">
-  	<time datetime="2015-07-08T02:43:38.000Z" itemprop="datePublished">2015-07-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/08/OC中的正则表达式初体验/">OC中的正则表达式初体验</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>正则表达式是独立于任何编程语言的一门知识,却被广泛应用在各种开发环境中.</p>
-<p>正则表达式在OC中可以使用一个叫做<code>NSRegularExpression</code>的类来处理.</p>
-<p>本文初步记录了自己在使用过程中的一点体会.</p>
-<p>记录点滴,供以后查阅之用.</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/08/OC中的正则表达式初体验/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-LeanCloud快速集成IM功能-边学边做" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/08/LeanCloud快速集成IM功能-边学边做/" class="article-date">
-  	<time datetime="2015-07-08T02:43:10.000Z" itemprop="datePublished">2015-07-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/08/LeanCloud快速集成IM功能-边学边做/">LeanCloud快速集成IM功能-边学边做</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给app快速集成IM功能的大体实现有两种方式:</p>
-<ul>
-<li><p>搭建自己的通信服务器(比如搭建基于XMPP的Openfire)</p>
-</li>
-<li><p>使用第三方提供的服务器(比如融云,环信以及本文的LeanCloud)</p>
-<p><em>每种方式都各有利弊,主要看公司的情况而定,大公司一般都采用自己的通信服务器,采用第三方服务器的方式比较适合初创型互联网公司</em></p>
-</li>
-<li><p>本文初步小结在开发中使用LeanCloud中的一些坑.</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="从集成LeanCloud的Framework开始">从集成LeanCloud的Framework开始</h2><blockquote>
-<p>关于LeanCloud的文档和技术支持这里就不吐槽了.直接爆自己遇到的一些坑.</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主题/">主题</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/08/LeanCloud快速集成IM功能-边学边做/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -868,8 +355,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

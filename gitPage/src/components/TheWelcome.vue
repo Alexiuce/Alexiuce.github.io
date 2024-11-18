@@ -21,7 +21,7 @@ const dateString = new Date().toLocaleDateString('zh-CN');
 
       <div flex >
         <v-btn  ml-40px h-full variant="text">Language </v-btn>
-        <v-divider vertical></v-divider>
+        <v-divider vertical color="success" :thickness="2"  class="border-opacity-25"></v-divider>
         <v-btn   h-full variant="text">Theme </v-btn>
       </div>
 

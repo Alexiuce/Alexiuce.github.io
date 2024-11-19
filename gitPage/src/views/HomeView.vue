@@ -2,10 +2,22 @@
 
 
 import HomeInfo from "@/components/HomeInfo.vue";
+import Blog from "@/components/Blog.vue";
+import {ref} from "vue";
 
 const Titles = ['Home','Blog','History','About']
 
 
+const clickedTitleIndex = (index:number) => {
+
+  switch (index) {
+    case 1: currentComponent.value = Blog;break;
+    default: currentComponent.value = HomeInfo
+  }
+
+}
+
+const currentComponent = ref(HomeInfo)
 
 </script>
 
@@ -16,7 +28,9 @@ const Titles = ['Home','Blog','History','About']
     <!--    header -->
     <div h-80px w-full class="glass" justify-between>
       <div>
-        <v-btn ml-40px  class="text-none" variant="text" v-for="(item,index) in Titles" :key="index">{{ item }}</v-btn>
+        <v-btn ml-40px  class="text-none" variant="text" v-for="(item,index) in Titles" :key="index" @click="clickedTitleIndex(index)">
+          {{ item }}
+        </v-btn>
       </div>
 
       <div flex >
@@ -30,7 +44,7 @@ const Titles = ['Home','Blog','History','About']
 
     <div flex-1>
 
-      <component :is="HomeInfo" />
+      <component :is="currentComponent" />
 
     </div>
 
@@ -47,12 +61,10 @@ const Titles = ['Home','Blog','History','About']
 .glass {
   background: rgba(255, 255, 255, 0.05); /* 半透明背景 */
   backdrop-filter: blur(10px); /* 毛玻璃模糊效果 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
+  //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
   display: flex;
   align-items: center;
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
+
 }
 
 </style>

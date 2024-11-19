@@ -3,21 +3,21 @@
 
 import HomeInfo from "@/components/HomeInfo.vue";
 import Blog from "@/components/Blog.vue";
-import {ref} from "vue";
+import {reactive, ref, shallowRef} from "vue";
 
 const Titles = ['Home','Blog','History','About']
 
 
 const clickedTitleIndex = (index:number) => {
-
+  currentSelectedButtonIndex.value = index
   switch (index) {
     case 1: currentComponent.value = Blog;break;
     default: currentComponent.value = HomeInfo
   }
 
 }
-
-const currentComponent = ref(HomeInfo)
+const currentComponent = shallowRef(HomeInfo)
+const currentSelectedButtonIndex = ref(0)
 
 </script>
 
@@ -28,7 +28,7 @@ const currentComponent = ref(HomeInfo)
     <!--    header -->
     <div h-80px w-full class="glass" justify-between>
       <div>
-        <v-btn ml-40px  class="text-none" variant="text" v-for="(item,index) in Titles" :key="index" @click="clickedTitleIndex(index)">
+        <v-btn ml-40px  class="text-none" :variant="currentSelectedButtonIndex === index ? 'tonal':'text'" v-for="(item,index) in Titles" :key="index" @click="clickedTitleIndex(index)">
           {{ item }}
         </v-btn>
       </div>
